@@ -1,0 +1,110 @@
+:root {
+	--size: 550px;
+	--btnSize: 65px;
+}
+
+#slideshow * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+#wrapper {
+	width: var(--size);
+	height: var(--size);
+	position: relative;
+}
+
+#slider-wrap {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	border: 5px solid #476080;
+	border-radius: 8px;
+}
+
+#slider-wrap #slider {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#slider-wrap #slider li {
+	float: left;
+	position: relative;
+	width: var(--size);
+	height: var(--size);
+}
+
+#slider-wrap #slider img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+/*btns*/
+
+.btns {
+	position: absolute;
+	width: var(--btnSize);
+	height: var(--btnSize);
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0.5);
+	top: 50%;
+	transform: translate(0, -50%);
+	border-radius: 50%;
+}
+
+.btns:hover {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+#next {
+	right: 5px;
+}
+
+#previous {
+	left: 5px;
+}
+
+/*bar*/
+
+#pagination-wrap {
+	margin-top: 5px;
+	min-width: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 15px;
+	position: relative;
+}
+
+#pagination-wrap ul {
+	width: 100%;
+	display: table;
+	text-align: center;
+}
+
+#pagination-wrap ul li {
+	vertical-align: middle;
+	margin: 0 8px;
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	border-radius: 50%;
+	border: 4px solid #476080;
+	position: relative;
+}
+
+#pagination-wrap ul li.active {
+	background-color: #476080;
+}
+
+/*ANIMATION*/
+
+#slider-wrap ul, #pagination-wrap ul li {
+	transition: all 0.3s cubic-bezier(1, .01, .32, 1);
+}

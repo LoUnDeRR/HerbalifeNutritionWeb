@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Herbalife</title>
 
-    <link rel="stylesheet" href="cart.css">
-    <script src="products.js"></script>
-    <script src="cart.js"></script>
-  </head>
-  <body id="body">
-    <div style="height: 50px;"></div>
-    <div id="cart-wrap">
-      <!-- (B) PRODUCTS LIST -->
-      <div id="cart-products"></div>
+<head>
+  <title>Herbalife</title>
+  <link rel="stylesheet" href="cart.css">
+  <script src="cart.js"></script>
+  <script src="products.js"></script>
+</head>
 
-      <!-- (C) CURRENT CART -->
-      <div id="cart-items"></div>
+<body id="body">
+  <div class="overlay">
+    <div class="o-frame">
+      <div class="o-close"></div>
     </div>
-  </body>
+  </div>
+
+
+  <div style="height: 50px;"></div>
+  <div id="cart-wrap">
+    <!-- (B) PRODUCTS LIST -->
+    <div id="cart-products"></div>
+
+    <!-- (C) CURRENT CART -->
+    <div id="cart-items"></div>
+  </div>
+</body>
+
 </html>
