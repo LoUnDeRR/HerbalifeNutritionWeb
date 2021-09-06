@@ -30,75 +30,74 @@ var cart = {
   // (C) INITIALIZE
   init: function () {
     // (C1) GET HTML ELEMENTS
-    cart.hPdt = document.getElementById("cart-products");
-    cart.hItems = document.getElementById("cart-items");
+    cart.hPdt = document.getElementById("cart_products");
+    cart.hItems = document.getElementById("cart_items");
 
     // (C2) DRAW PRODUCTS LIST
     cart.hPdt.innerHTML = "";
     let p, item;
-    let body = document.getElementById("body");
     for (let id in products) {
       // WRAPPER
       p = products[id];
       item = document.createElement("div");
-      item.className = "p-item";
+      item.className = "p_item";
       cart.hPdt.appendChild(item);
 
       // PRODUCT IMAGE CONTAINER
       let pImgContainer = document.createElement("div");
-      pImgContainer.className = "p-imgContainer";
+      pImgContainer.className = "p_imgContainer";
       item.appendChild(pImgContainer);
 
       // PRODUCT HREF
       let pHref = document.createElement("a");
       pHref.href = "#";
-      pHref.className = "p-href";
+      pHref.className = "p_href";
       pImgContainer.appendChild(pHref);
 
       // PRODUCT IMAGE2
       let pImg2 = document.createElement("img");
       pImg2.src = cart.iURL + p.img2;
-      pImg2.className = "p-img2";
+      pImg2.className = "p_img2";
       pImgContainer.appendChild(pImg2);
 
       // PRODUCT IMAGE
       let pImg = document.createElement("img");
       pImg.src = cart.iURL + p.img;
-      pImg.className = "p-img";
+      pImg.className = "p_img";
       pImgContainer.appendChild(pImg);
 
       // *PRODUCT NAME CONTAINER
       let pNameContainer = document.createElement("div");
-      pNameContainer.className = "p-nameContainer";
+      pNameContainer.className = "p_nameContainer";
       item.appendChild(pNameContainer);
 
       // *PRODUCT PRICE BOX
       let pPriceBox = document.createElement("div");
-      pPriceBox.className = "p-priceBox";
+      pPriceBox.className = "p_priceBox";
       item.appendChild(pPriceBox);
 
       // *PRODUCT PRICE
       let pPrice = document.createElement("p");
       pPrice.textContent = p.price + " лв.";
-      pPrice.className = "p-price";
+      pPrice.className = "p_price";
       pPriceBox.appendChild(pPrice);
 
       // *PRODUCT ADD TO CART BOX
       let pAddToCartBox = document.createElement("div");
-      pAddToCartBox.className = "p-addToCartBox";
+      pAddToCartBox.className = "p_addToCartBox";
       item.appendChild(pAddToCartBox);
 
       // *PRODUCT ADD TO CART ICON
       let pAddToCartIcon = document.createElement("img");
-      pAddToCartIcon.src = "images/addToCart.png";
-      pAddToCartIcon.className = "p-addToCartIcon";
+      pAddToCartIcon.src = "images/addToCartIcon.png";
+      pAddToCartIcon.className = "p_addToCartIcon";
       pAddToCartBox.appendChild(pAddToCartIcon);
 
       // INPUT ADD TO CART
       let pAddToCartInput = document.createElement("input");
       pAddToCartInput.type = "button";
       pAddToCartInput.value = "";
-      pAddToCartInput.className = "cart p-addToCartInput";
+      pAddToCartInput.className = "cart p_addToCartInput";
       pAddToCartInput.onclick = cart.add;
       pAddToCartInput.dataset.id = id;
       pAddToCartBox.appendChild(pAddToCartInput);
@@ -108,75 +107,31 @@ var cart = {
       // *PRODUCT NAME
       let pName = document.createElement("p");
       pName.textContent = p.name;
-      pName.className = "p-name";
+      pName.className = "p_name";
       pNameContainer.appendChild(pName);
 
       if (p.new == true) {
         // *PRODUCT NEW
         let pNew = document.createElement("div");
-        pNew.className = "p-new";
+        pNew.className = "p_new";
         item.appendChild(pNew);
 
         // *PRODUCT NEW TEXT
         let pNewText = document.createElement("p");
         pNewText.textContent = "НОВО";
-        pNewText.className = "p-newp";
+        pNewText.className = "p_newp";
         pNew.appendChild(pNewText);
       }
 
-      // CLICK EVENT LISTENER
-      pHref.addEventListener("click", function () {
-        // DIM
-        let oDim = document.createElement("div");
-        oDim.className = "o-dim overlay";
-        body.appendChild(oDim);
-
-        // FRAME
-        let oFrame = document.createElement("div");
-        oFrame.className = "o-frame overlay";
-        oDim.appendChild(oFrame);
-
-        // FRAME CLOSE
-        let oFrameClose = document.createElement("img");
-        oFrameClose.className = "o-frameClose overlay";
-        oFrameClose.src = 'images/close.svg'; // CHANGE
-        oFrame.appendChild(oFrameClose);
-        oFrameClose.onclick = function closeOverlay() {
-          document.querySelectorAll('.overlay').forEach(e => e.remove());
-        }
-        
-        // PRODUCT IMGS CONTAINER
-        let oImgContainer = document.createElement("div");
-        oImgContainer.className = "o-imgContainer";
-        oImgContainer.src = cart.iURL + p.img;
-        oFrame.appendChild(oImgContainer);
-
-        // PRODUCT IMG MAIN
-        let oImgMain = document.createElement("img");
-        oImgMain.className = "o-imgMain";
-        oImgMain.src = cart.iURL + p.img;
-        oImgContainer.appendChild(oImgMain);
-
-        // PRODUCT IMGS FLEX
-        let oImgsFlex = document.createElement("div");
-        oImgsFlex.className = "o-imgsFlex overlay";
-        oImgContainer.appendChild(oImgsFlex);
-
-        // let oImg2 = document.createElement("img");
-        // oImg2.className = "o-img2";
-        // oImg2.src = p.img;
-
-        // if (p.img2 != null) {
-
-        // }
-        // let oImg1 = document.createElement("img");
-        // oImgMain.className = "o-img1";
-        // oImgMain.src = p.img;
-        // let oImg1 = document.createElement("img");
-        // oImgMain.className = "o-img1";
-        // oImgMain.src = p.img;
-
-      });
+      // CLOSE OVERLAY
+      let overlayCloseFnc = document.getElementsByClassName('o_close_fnc');
+      for (const element of overlayCloseFnc) {
+        element.addEventListener("click", function () {
+          let overlay = document.getElementById("overlay");
+          overlay.style.display = 'none';
+          // POSSIBLY having id 'overlay' as a trigger might break things - disabled
+        });
+      }
     }
 
     // (C3) LOAD CART FROM PREVIOUS SESSION
@@ -210,13 +165,13 @@ var cart = {
         // ITEM
         p = products[id];
         item = document.createElement("div");
-        item.className = "c-item";
+        item.className = "c_item";
         cart.hItems.appendChild(item);
 
         // NAME
         part = document.createElement("div");
         part.innerHTML = p.name;
-        part.className = "c-name";
+        part.className = "c_name";
         item.appendChild(part);
 
         // REMOVE
@@ -224,7 +179,7 @@ var cart = {
         part.type = "button";
         part.value = "X";
         part.dataset.id = id;
-        part.className = "c-del cart";
+        part.className = "c_del cart";
         part.addEventListener("click", cart.remove);
         item.appendChild(part);
 
@@ -234,7 +189,7 @@ var cart = {
         part.min = 0;
         part.value = cart.items[id];
         part.dataset.id = id;
-        part.className = "c-qty";
+        part.className = "c_qty";
         part.addEventListener("change", cart.change);
         item.appendChild(part);
 
@@ -245,8 +200,8 @@ var cart = {
 
       // TOTAL AMOUNT
       item = document.createElement("div");
-      item.className = "c-total";
-      item.id = "c-total";
+      item.className = "c_total";
+      item.id = "c_total";
       item.innerHTML = "TOTAL: $" + total;
       cart.hItems.appendChild(item);
 
@@ -255,7 +210,7 @@ var cart = {
       item.type = "button";
       item.value = "Empty";
       item.addEventListener("click", cart.nuke);
-      item.className = "c-empty cart";
+      item.className = "c_empty cart";
       cart.hItems.appendChild(item);
 
       // CHECKOUT BUTTONS
@@ -263,7 +218,7 @@ var cart = {
       item.type = "button";
       item.value = "Checkout";
       item.addEventListener("click", cart.checkout);
-      item.className = "c-checkout cart";
+      item.className = "c_checkout cart";
       cart.hItems.appendChild(item);
     }
   },
@@ -294,7 +249,7 @@ var cart = {
       var total = 0;
       for (let id in cart.items) {
         total += cart.items[id] * products[id].price;
-        document.getElementById("c-total").innerHTML = "TOTAL: $" + total;
+        document.getElementById("c_total").innerHTML = "TOTAL: $" + total;
       }
     }
   },

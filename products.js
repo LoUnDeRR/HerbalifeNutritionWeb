@@ -28,7 +28,7 @@ var products = {
     img3: "",
     img4: "",
     price : 11.34,
-    new : true
+    new : false
   }
   
   // ,
