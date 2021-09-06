@@ -1,9 +1,9 @@
 //current position
 var pos = 0;
 //number of slides
-var totalSlides = $('#slider-wrap img').length - 1;
+var totalSlides = $('#slider_wrap img').length - 2;
 //get the slide width
-var sliderWidth = $('#slider-wrap img').width();
+var sliderWidth = $('#slider_wrap img').width();
 
 $(document).ready(function () {
 
@@ -12,7 +12,7 @@ $(document).ready(function () {
 	 BUILD THE SLIDER
 	*****************/
 	//set width to be 'x' times the number of slides
-	$('#slider-wrap #slider').width(sliderWidth * totalSlides);
+	$('#slider_wrap #slider').width(sliderWidth * totalSlides);
 
 	//next slide 	
 	$('#next').click(function () {
@@ -33,14 +33,14 @@ $(document).ready(function () {
 	var autoSlider = setInterval(slideRight, 3000);
 
 	//for each slide 
-	$.each($('#slider-wrap ul li'), function () {
+	$.each($('#slider_wrap ul li'), function () {
 		//set its color
-		var c = $(this).attr("data-color");
+		var c = $(this).attr("data_color");
 		$(this).css("background", c);
 
 		//create a pagination
 		var li = document.createElement('li');
-		$('#pagination-wrap ul').append(li);
+		$('#pagination_wrap ul').append(li);
 	});
 
 	//counter
@@ -51,7 +51,7 @@ $(document).ready(function () {
 
 	//hide/show controls/btns when hover
 	//pause automatic slide when hover
-	$('#slider-wrap').addClass('active'); clearInterval(autoSlider);
+	$('#slider_wrap').addClass('active'); clearInterval(autoSlider);
 
 
 
@@ -66,7 +66,7 @@ $(document).ready(function () {
 function slideLeft() {
 	pos--;
 	if (pos == -1) { pos = totalSlides - 1; }
-	$('#slider-wrap ul#slider').css('left', -(sliderWidth * pos));
+	$('#slider_wrap ul#slider').css('left', -(sliderWidth * pos));
 
 	//*> optional
 	countSlides();
@@ -80,7 +80,7 @@ function slideLeft() {
 function slideRight() {
 	pos++;
 	if (pos == totalSlides) { pos = 0; }
-	$('#slider-wrap ul#slider').css('left', -(sliderWidth * pos));
+	$('#slider_wrap ul#slider').css('left', -(sliderWidth * pos));
 
 	//*> optional 
 	countSlides();
@@ -98,6 +98,6 @@ function countSlides() {
 }
 
 function pagination() {
-	$('#pagination-wrap ul li').removeClass('active');
-	$('#pagination-wrap ul li:eq(' + pos + ')').addClass('active');
+	$('#pagination_wrap ul li').removeClass('active');
+	$('#pagination_wrap ul li:eq(' + pos + ')').addClass('active');
 }

@@ -209,7 +209,7 @@ button.cart {
 
 /* PRODUCT OVERLAY */
 
-#overlay {
+#o_overlay {
   position: fixed;
   top: 0;
   left: 0;
