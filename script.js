@@ -4,8 +4,6 @@ var pos = 0;
 var totalSlides = $('#slider-wrap img').length - 1;
 //get the slide width
 var sliderWidth = $('#slider-wrap img').width();
-console.log(sliderWidth);
-
 
 $(document).ready(function () {
 

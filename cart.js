@@ -126,10 +126,11 @@ var cart = {
       // CLOSE OVERLAY
       let overlayCloseFnc = document.getElementsByClassName('o_close_fnc');
       for (const element of overlayCloseFnc) {
-        element.addEventListener("click", function () {
+        element.addEventListener("click", function (closeOverlay) {
           let overlay = document.getElementById("overlay");
-          overlay.style.display = 'none';
-          // POSSIBLY having id 'overlay' as a trigger might break things - disabled
+          if (closeOverlay.target === element) {
+            overlay.style.display = 'none';
+          }
         });
       }
     }
