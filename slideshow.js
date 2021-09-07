@@ -7,6 +7,14 @@ var sliderWidth = $('#slider_wrap img').width();
 
 $(document).ready(function () {
 
+	var images = function () {
+		for (const li of document.getElementById('slider').childNodes) {
+			for (const image of li.childNodes) {
+				console.log(image);
+				return image;
+			}
+		}
+	}
 
 	/*****************
 	 BUILD THE SLIDER
