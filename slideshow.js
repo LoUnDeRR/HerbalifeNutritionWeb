@@ -7,14 +7,14 @@ var sliderWidth = $('#slider_wrap img').width();
 
 $(document).ready(function () {
 
-	var images = function () {
-		for (const li of document.getElementById('slider').childNodes) {
-			for (const image of li.childNodes) {
-				console.log(image);
-				return image;
-			}
-		}
-	}
+	// var images = function () {
+	// 	for (const li of document.getElementById('slider').childNodes) {
+	// 		for (const image of li.childNodes) {
+	// 			console.log(image);
+	// 			return image;
+	// 		}
+	// 	}
+	// }
 
 	/*****************
 	 BUILD THE SLIDER
@@ -32,20 +32,11 @@ $(document).ready(function () {
 		slideLeft();
 	});
 
-
-
 	/*************************
 	 //*> OPTIONAL SETTINGS
 	************************/
-	//automatic slider
-	var autoSlider = setInterval(slideRight, 3000);
-
 	//for each slide 
 	$.each($('#slider_wrap ul li'), function () {
-		//set its color
-		var c = $(this).attr("data_color");
-		$(this).css("background", c);
-
 		//create a pagination
 		var li = document.createElement('li');
 		$('#pagination_wrap ul').append(li);
@@ -53,20 +44,9 @@ $(document).ready(function () {
 
 	//counter
 	countSlides();
-
 	//pagination
 	pagination();
-
-	//hide/show controls/btns when hover
-	//pause automatic slide when hover
-	$('#slider_wrap').addClass('active'); clearInterval(autoSlider);
-
-
-
-
 });//DOCUMENT READY
-
-
 
 /***********
  SLIDE LEFT
@@ -94,9 +74,6 @@ function slideRight() {
 	countSlides();
 	pagination();
 }
-
-
-
 
 /************************
  //*> OPTIONAL SETTINGS
