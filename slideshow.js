@@ -1,23 +1,11 @@
-//current position
-var pos = 0;
-//number of slides
-var totalSlides = $('#slider_wrap img').length - 2;
-//get the slide width
-var sliderWidth = $('#slider_wrap img').width();
+function BuildSlider() {
+	var pos = 0;
 
-$(document).ready(function () {
-
-	// var images = function () {
-	// 	for (const li of document.getElementById('slider').childNodes) {
-	// 		for (const image of li.childNodes) {
-	// 			console.log(image);
-	// 			return image;
-	// 		}
-	// 	}
-	// }
-
+	var totalSlides = $('#slider_wrap img').length - 2;
+	//get the slide width
+	var sliderWidth = $('#slider_wrap img').width();
 	/*****************
-	 BUILD THE SLIDER
+	  BUILD THE SLIDER
 	*****************/
 	//set width to be 'x' times the number of slides
 	$('#slider_wrap #slider').width(sliderWidth * totalSlides);
@@ -43,46 +31,48 @@ $(document).ready(function () {
 	});
 
 	//counter
-	countSlides();
 	//pagination
 	pagination();
-});//DOCUMENT READY
 
-/***********
- SLIDE LEFT
-************/
-function slideLeft() {
-	pos--;
-	if (pos == -1) { pos = totalSlides - 1; }
-	$('#slider_wrap ul#slider').css('left', -(sliderWidth * pos));
 
-	//*> optional
-	countSlides();
-	pagination();
+
+	/***********
+	 SLIDE LEFT
+	************/
+	function slideLeft() {
+		pos--;
+		if (pos == -1) { pos = totalSlides - 1; }
+		$('#slider_wrap ul#slider').css('left', -(sliderWidth * pos));
+
+		//*> optional
+		pagination();
+	}
+
+
+	/************
+	 SLIDE RIGHT
+	*************/
+	function slideRight() {
+		pos++;
+		if (pos == totalSlides) { pos = 0; }
+		$('#slider_wrap ul#slider').css('left', -(sliderWidth * pos));
+
+		//*> optional 
+		pagination();
+	}
+
+	/************************
+	 //*> OPTIONAL SETTINGS
+	************************/
+
+
+	function pagination() {
+		$('#pagination_wrap ul li').removeClass('active');
+		$('#pagination_wrap ul li:eq(' + pos + ')').addClass('active');
+	}
 }
 
-
-/************
- SLIDE RIGHT
-*************/
-function slideRight() {
-	pos++;
-	if (pos == totalSlides) { pos = 0; }
-	$('#slider_wrap ul#slider').css('left', -(sliderWidth * pos));
-
-	//*> optional 
-	countSlides();
-	pagination();
-}
-
-/************************
- //*> OPTIONAL SETTINGS
-************************/
-function countSlides() {
-	$('#counter').html(pos + 1 + ' / ' + totalSlides);
-}
-
-function pagination() {
-	$('#pagination_wrap ul li').removeClass('active');
-	$('#pagination_wrap ul li:eq(' + pos + ')').addClass('active');
+function destroySlider() {
+	document.getElementById('pagination_wrap').children[0].innerHTML = "";
+	document.getElementById('slider').innerHTML = "";
 }

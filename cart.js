@@ -50,19 +50,23 @@ var cart = {
 
       // PRODUCT HREF
       let pHref = document.createElement("a");
-      pHref.href = "#";
+      pHref.onclick = "displayOverlay();";
       pHref.className = "p_href";
       pImgContainer.appendChild(pHref);
 
       // PRODUCT IMAGE2
       let pImg2 = document.createElement("img");
-      pImg2.src = cart.iURL + p.img2;
+      if (p.images[1] != null) {
+        pImg2.src = cart.iURL + p.images[1];
+      } else {
+        pImg2.src = cart.iURL + p.images[0];
+      }
       pImg2.className = "p_img2";
       pImgContainer.appendChild(pImg2);
 
       // PRODUCT IMAGE
       let pImg = document.createElement("img");
-      pImg.src = cart.iURL + p.img;
+      pImg.src = cart.iURL + p.images[0];
       pImg.className = "p_img";
       pImgContainer.appendChild(pImg);
 
@@ -102,8 +106,6 @@ var cart = {
       pAddToCartInput.dataset.id = id;
       pAddToCartBox.appendChild(pAddToCartInput);
 
-
-
       // *PRODUCT NAME
       let pName = document.createElement("p");
       pName.textContent = p.name;
@@ -122,18 +124,54 @@ var cart = {
         pNewText.className = "p_newp";
         pNew.appendChild(pNewText);
       }
-
-      // CLOSE OVERLAY
-      let overlayCloseFnc = document.getElementsByClassName('o_close_fnc');
-      for (const element of overlayCloseFnc) {
-        element.addEventListener("click", function (closeOverlay) {
-          let overlay = document.getElementById("overlay");
-          if (closeOverlay.target === element) {
-            overlay.style.display = 'none';
-          }
-        });
-      }
     }
+
+    // OPEN OVERLAY
+    $('.p_href').click(function () {
+      overlay.style.display = "flex";
+      let title = document.getElementById("o_title");
+      title.innerHTML = p.name;
+      let description = document.getElementById("o_description")
+      description.innerHTML = p.description;
+      let price = document.getElementById("o_price")
+      price.children[0].innerHTML = p.price + " лв.";
+
+      for (let index = 0; index < p.images.length; index++) {
+        let liImg = document.createElement("li");
+        document.getElementById('slider').appendChild(liImg);
+
+        let slideshowImage = document.createElement("img")
+        slideshowImage.src = 'images/' + p.images[index];
+        liImg.appendChild(slideshowImage);
+      }
+      
+      BuildSlider();
+    });
+
+    // CLOSE OVERLAY
+    let overlayCloseFnc = document.getElementsByClassName('o_close_fnc');
+    for (const element of overlayCloseFnc) {
+      element.addEventListener("click", function (closeOverlay) {
+        let overlay = document.getElementById("overlay");
+        if (closeOverlay.target === element) {
+          overlay.style.display = 'none';
+          destroySlider();
+
+        }
+      });
+    }
+
+    // BUY OVERLAY
+    let buyFnc = document.getElementById('o_buy_container');
+    buyFnc.addEventListener("click", function () {
+      alert('Not implemented! (buyFnc)');
+    });
+
+    // ADD TO CART OVERLAY
+    let addToCartFnc = document.getElementById('o_add_to_cart_container');
+    addToCartFnc.addEventListener("click", function () {
+      alert('Not implemented! (addToCartFnc)');
+    });
 
     // (C3) LOAD CART FROM PREVIOUS SESSION
     cart.load();
