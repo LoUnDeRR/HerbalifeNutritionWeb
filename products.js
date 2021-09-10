@@ -1,6 +1,7 @@
 // DUMMY PRODUCTS (PRODUCT ID : DATA)
 var products = {
   123: {
+    id: 123,
     name : "NAME IS WORKING",
     description : "DESC IS WORKING",
     images:["dummy-pdt-b.png", "dummy-pdt-a.jpg"],
@@ -8,6 +9,7 @@ var products = {
     new : true
   },
   124: {
+    id: 124,
     name : "NAME2 IS WORKING",
     description : "DESC IS WORKING",
     images:["p4.jpg", "p2.jpg"],
