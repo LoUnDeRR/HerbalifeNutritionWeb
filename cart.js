@@ -1,3 +1,4 @@
+var activeId;
 var cart = {
   // (A) PROPERTIES
   hPdt: null, // HTML products list
@@ -52,7 +53,11 @@ var cart = {
 
       // PRODUCT HREF
       let pHref = document.createElement("a");
-      pHref.addEventListener('click', function() {OpenOverlay(id.toString());});
+      pHref.addEventListener('click', function () {
+        activeId = id;
+        
+        OpenOverlay();
+      });
       pHref.className = "p_href";
       pImgContainer.appendChild(pHref);
 
@@ -146,7 +151,7 @@ var cart = {
     //     slideshowImage.src = 'images/' + p.images[index];
     //     liImg.appendChild(slideshowImage);
     //   }
-      
+
     //   BuildSlider();
     // });
 

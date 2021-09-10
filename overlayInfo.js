@@ -1,6 +1,5 @@
-function OpenOverlay(id) {
-    let product = products[id];
-
+function OpenOverlay() {
+    let product = products[activeId];
     // OPEN OVERLAY
     let overlay = document.getElementById("overlay");
     overlay.style.display = "flex";
@@ -22,8 +21,8 @@ function OpenOverlay(id) {
 
     BuildSlider();
 
-    BuyOverlay(id);
-    AddToCartOverlay(id);
+    BuyOverlay();
+    AddToCartOverlay();
 }
 
 function CloseOverlay() {
@@ -32,11 +31,11 @@ function CloseOverlay() {
         element.addEventListener("click", function (closeOverlay) {
             let overlay = document.getElementById("overlay");
             if (closeOverlay.target === element) {
+                document.getElementById("slider").style.left = 0;
                 overlay.style.display = 'none';
                 destroySlider();
                 document.getElementById('o_add_to_cart_container').removeEventListener("click", addToCartOverlayClick);
                 document.getElementById('o_buy_container').removeEventListener("click", buyOverlayClick);
-                alert(1);
             }
         });
     }
@@ -46,27 +45,27 @@ function CloseOverlay() {
 
 
 
-function AddToCartOverlay(id) {
+function AddToCartOverlay() {
     // ADD TO CART OVERLAY
     let addToCartFnc = document.getElementById('o_add_to_cart_container');
-    addToCartFnc.addEventListener("click", addToCartOverlayClick.bind(this, id));
+    addToCartFnc.addEventListener("click", addToCartOverlayClick);
 }
 
-function addToCartOverlayClick(id) {
-    alert(`Not implemented! (addToCartFnc) + ${id}`);
+function addToCartOverlayClick() {
+    alert(`Not implemented! (addToCartFnc) + ${activeId}`);
 }
 
 
 
 
-function BuyOverlay(id) {
+function BuyOverlay() {
     // BUY OVERLAY
     let buyFnc = document.getElementById('o_buy_container');
-    buyFnc.addEventListener("click", buyOverlayClick.bind(this, id));
+    buyFnc.addEventListener("click", buyOverlayClick);
 }
 
-function buyOverlayClick(id) {
-    alert(`Not implemented! (buyFunc) + ${id}`);
+function buyOverlayClick() {
+    alert(`Not implemented! (buyFunc) + ${activeId}`);
 }
 
 
