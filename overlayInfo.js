@@ -19,6 +19,14 @@ function OpenOverlay() {
         liImg.appendChild(slideshowImage);
     }
 
+    if (products[activeId].new === false) {
+        document.getElementById('o_new').style.display = "none";
+    } else {
+        document.getElementById('o_new').style.display = "block";
+    }
+
+
+
     BuildSlider();
 
     BuyOverlay();

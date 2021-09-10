@@ -55,7 +55,7 @@ var cart = {
       let pHref = document.createElement("a");
       pHref.addEventListener('click', function () {
         activeId = id;
-        
+
         OpenOverlay();
       });
       pHref.className = "p_href";
@@ -119,7 +119,7 @@ var cart = {
       pName.className = "p_name";
       pNameContainer.appendChild(pName);
 
-      if (p.new == true) {
+      if (p.new === true) {
         // *PRODUCT NEW
         let pNew = document.createElement("div");
         pNew.className = "p_new";
@@ -132,53 +132,6 @@ var cart = {
         pNew.appendChild(pNewText);
       }
     }
-
-    // // OPEN OVERLAY
-    // $('.p_href').click(function () {
-    //   overlay.style.display = "flex";
-    //   let title = document.getElementById("o_title");
-    //   title.innerHTML = p.name;
-    //   let description = document.getElementById("o_description")
-    //   description.innerHTML = p.description;
-    //   let price = document.getElementById("o_price")
-    //   price.children[0].innerHTML = p.price + " лв.";
-
-    //   for (let index = 0; index < p.images.length; index++) {
-    //     let liImg = document.createElement("li");
-    //     document.getElementById('slider').appendChild(liImg);
-
-    //     let slideshowImage = document.createElement("img")
-    //     slideshowImage.src = 'images/' + p.images[index];
-    //     liImg.appendChild(slideshowImage);
-    //   }
-
-    //   BuildSlider();
-    // });
-
-    // // CLOSE OVERLAY
-    // let overlayCloseFnc = document.getElementsByClassName('o_close_fnc');
-    // for (const element of overlayCloseFnc) {
-    //   element.addEventListener("click", function (closeOverlay) {
-    //     let overlay = document.getElementById("overlay");
-    //     if (closeOverlay.target === element) {
-    //       overlay.style.display = 'none';
-    //       destroySlider();
-
-    //     }
-    //   });
-    // }
-
-    // // BUY OVERLAY
-    // let buyFnc = document.getElementById('o_buy_container');
-    // buyFnc.addEventListener("click", function () {
-    //   alert('Not implemented! (buyFnc)');
-    // });
-
-    // // ADD TO CART OVERLAY
-    // let addToCartFnc = document.getElementById('o_add_to_cart_container');
-    // addToCartFnc.addEventListener("click", function () {
-    //   alert('Not implemented! (addToCartFnc)');
-    // });
 
     // (C3) LOAD CART FROM PREVIOUS SESSION
     cart.load();
