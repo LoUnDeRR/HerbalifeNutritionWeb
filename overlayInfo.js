@@ -60,7 +60,7 @@ function AddToCartOverlay() {
 }
 
 function addToCartOverlayClick() {
-    alert(`Not implemented! (addToCartFnc) + ${activeId}`);
+    alert(`Not implemented! (addToCartFnc) index [${activeId}]`);
 }
 
 
@@ -73,40 +73,5 @@ function BuyOverlay() {
 }
 
 function buyOverlayClick() {
-    alert(`Not implemented! (buyFunc) + ${activeId}`);
+    alert(`Not implemented! (buyFunc) index [${activeId}]`);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

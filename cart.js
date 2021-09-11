@@ -30,105 +30,104 @@ var cart = {
 
   // (C) INITIALIZE
   init: function () {
-    CloseOverlay();
-
     // (C1) GET HTML ELEMENTS
     cart.hPdt = document.getElementById("cart_products");
     cart.hItems = document.getElementById("cart_items");
 
     // (C2) DRAW PRODUCTS LIST
     cart.hPdt.innerHTML = "";
-    let p, item;
+    let product, item;
     for (let id in products) {
-      // WRAPPER
-      p = products[id];
+      // ITEM
+      product = products[id];
       item = document.createElement("div");
       item.className = "p_item";
       cart.hPdt.appendChild(item);
 
-      // PRODUCT IMAGE CONTAINER
-      let pImgContainer = document.createElement("div");
-      pImgContainer.className = "p_imgContainer";
-      item.appendChild(pImgContainer);
+      // PRODUCT IMAGE AND CLICK HANDLER CONTAINER
+      let pImgClickHandlerContainer = document.createElement("div");
+      pImgClickHandlerContainer.className = "p_imgClickHandlerContainer";
+      item.appendChild(pImgClickHandlerContainer);
 
-      // PRODUCT HREF
-      let pHref = document.createElement("a");
-      pHref.addEventListener('click', function () {
+      // PRODUCT CLICK HANDLER
+      let pClickHandler = document.createElement("a");
+      pClickHandler.addEventListener('click', function () {
         activeId = id;
-
         OpenOverlay();
       });
-      pHref.className = "p_href";
-      pImgContainer.appendChild(pHref);
+      pClickHandler.className = "p_clickHandler";
+      pImgClickHandlerContainer.appendChild(pClickHandler);
 
-      // PRODUCT IMAGE2
-      let pImg2 = document.createElement("img");
-      if (p.images[1] != null) {
-        pImg2.src = cart.iURL + p.images[1];
+      // PRODUCT IMAGE BACK
+      let pImgBack = document.createElement("img");
+      if (product.images[1] != null) {
+        pImgBack.src = cart.iURL + product.images[1];
       } else {
-        pImg2.src = cart.iURL + p.images[0];
+        pImgBack.src = cart.iURL + product.images[0];
       }
-      pImg2.className = "p_img2";
-      pImgContainer.appendChild(pImg2);
+      pImgBack.className = "p_imgBack";
+      pImgClickHandlerContainer.appendChild(pImgBack);
 
-      // PRODUCT IMAGE
-      let pImg = document.createElement("img");
-      pImg.src = cart.iURL + p.images[0];
-      pImg.className = "p_img";
-      pImgContainer.appendChild(pImg);
+      // PRODUCT IMAGE FRONT
+      let pImgFront = document.createElement("img");
+      pImgFront.src = cart.iURL + product.images[0];
+      pImgFront.className = "p_imgFront";
+      pImgClickHandlerContainer.appendChild(pImgFront);
 
-      // *PRODUCT NAME CONTAINER
+      // PRODUCT NAME CONTAINER
       let pNameContainer = document.createElement("div");
       pNameContainer.className = "p_nameContainer";
       item.appendChild(pNameContainer);
 
-      // *PRODUCT PRICE BOX
-      let pPriceBox = document.createElement("div");
-      pPriceBox.className = "p_priceBox";
-      item.appendChild(pPriceBox);
-
-      // *PRODUCT PRICE
-      let pPrice = document.createElement("p");
-      pPrice.textContent = p.price + " лв.";
-      pPrice.className = "p_price";
-      pPriceBox.appendChild(pPrice);
-
-      // *PRODUCT ADD TO CART BOX
-      let pAddToCartBox = document.createElement("div");
-      pAddToCartBox.className = "p_addToCartBox";
-      item.appendChild(pAddToCartBox);
-
-      // *PRODUCT ADD TO CART ICON
-      let pAddToCartIcon = document.createElement("img");
-      pAddToCartIcon.src = "images/addToCartIcon.png";
-      pAddToCartIcon.className = "p_addToCartIcon";
-      pAddToCartBox.appendChild(pAddToCartIcon);
-
-      // INPUT ADD TO CART
-      let pAddToCartInput = document.createElement("input");
-      pAddToCartInput.type = "button";
-      pAddToCartInput.value = "";
-      pAddToCartInput.className = "cart p_addToCartInput";
-      pAddToCartInput.onclick = cart.add;
-      pAddToCartInput.dataset.id = id;
-      pAddToCartBox.appendChild(pAddToCartInput);
-
-      // *PRODUCT NAME
-      let pName = document.createElement("p");
-      pName.textContent = p.name;
+      // PRODUCT NAME
+      let pName = document.createElement("product");
+      pName.textContent = product.name;
       pName.className = "p_name";
       pNameContainer.appendChild(pName);
 
-      if (p.new === true) {
-        // *PRODUCT NEW
+      // PRODUCT PRICE CONTAINER
+      let pPriceContainer = document.createElement("div");
+      pPriceContainer.className = "p_priceContainer";
+      item.appendChild(pPriceContainer);
+
+      // PRODUCT PRICE
+      let pPrice = document.createElement("product");
+      pPrice.textContent = product.price + " лв.";
+      pPrice.className = "p_price";
+      pPriceContainer.appendChild(pPrice);
+
+      // PRODUCT ADD TO CART CONTAINER
+      let pATCContainer = document.createElement("div");
+      pATCContainer.className = "p_ATCContainer";
+      item.appendChild(pATCContainer);
+
+      // PRODUCT ADD TO CART ICON
+      let pATCIcon = document.createElement("img");
+      pATCIcon.src = cart.iURL + "addToCartIcon.png";
+      pATCIcon.className = "p_ATCIcon";
+      pATCContainer.appendChild(pATCIcon);
+
+      // PRODUCT ADD TO CART INPUT
+      let pATCInput = document.createElement("input");
+      pATCInput.type = "button";
+      pATCInput.value = "";
+      pATCInput.className = "cart p_ATCInput";
+      pATCInput.onclick = cart.add;
+      pATCInput.dataset.id = id;
+      pATCContainer.appendChild(pATCInput);
+
+
+
+      if (product.new === true) {
+        // PRODUCT NEW
         let pNew = document.createElement("div");
         pNew.className = "p_new";
         item.appendChild(pNew);
 
-        // *PRODUCT NEW TEXT
-        let pNewText = document.createElement("p");
+        // PRODUCT NEW TEXT
+        let pNewText = document.createElement("product");
         pNewText.textContent = "НОВО";
-        pNewText.className = "p_newp";
+        pNewText.className = "p_newText";
         pNew.appendChild(pNewText);
       }
     }
@@ -138,6 +137,8 @@ var cart = {
 
     // (C4) LIST CURRENT CART ITEMS
     cart.list();
+
+    CloseOverlay();
   },
 
   // (D) LIST CURRENT CART ITEMS (IN HTML)
@@ -159,17 +160,17 @@ var cart = {
 
     // (D3) CART IS NOT EMPTY - LIST ITEMS
     else {
-      let p, total = 0, subtotal = 0;
+      let product, total = 0, subtotal = 0;
       for (let id in cart.items) {
         // ITEM
-        p = products[id];
+        product = products[id];
         item = document.createElement("div");
         item.className = "c_item";
         cart.hItems.appendChild(item);
 
         // NAME
         part = document.createElement("div");
-        part.innerHTML = p.name;
+        part.innerHTML = product.name;
         part.className = "c_name";
         item.appendChild(part);
 
@@ -193,7 +194,7 @@ var cart = {
         item.appendChild(part);
 
         // SUBTOTAL
-        subtotal = cart.items[id] * p.price;
+        subtotal = cart.items[id] * product.price;
         total += subtotal;
       }
 

@@ -67,14 +67,14 @@ button.cart {
   cursor: pointer;
 }
 
-.p_imgContainer {
+.p_imgClickHandlerContainer {
   border-radius: 10px;
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.p_img {
+.p_imgFront {
   pointer-events: none;
   position: absolute;
   height: 305px;
@@ -84,7 +84,7 @@ button.cart {
   border-top-right-radius: 10px;
 }
 
-.p_img2 {
+.p_imgBack {
   pointer-events: none;
   position: absolute;
   height: 305px;
@@ -118,7 +118,7 @@ button.cart {
   padding-right: 10px;
 }
 
-.p_priceBox {
+.p_priceContainer {
   pointer-events: none;
   bottom: 97px;
   position: absolute;
@@ -143,7 +143,7 @@ button.cart {
   color: #FFFFFF;
 }
 
-.p_addToCartBox {
+.p_ATCContainer {
   height: 100px;
   width: 100px;
   background-color: #8EE158;
@@ -154,11 +154,11 @@ button.cart {
   box-shadow: 0px 4px 4px 0px rgb(0, 0, 0, 0.25);
 }
 
-.p_addToCartBox:hover {
+.p_ATCContainer:hover {
   background-color: #7ECC4C;
 }
 
-.p_addToCartIcon {
+.p_ATCIcon {
   left: 18px;
   bottom: 20px;
   position: absolute;
@@ -166,7 +166,7 @@ button.cart {
   width: 60px;
 }
 
-.p_addToCartInput {
+.p_ATCInput {
   position: absolute;
   cursor: pointer;
   height: 100px;
@@ -190,7 +190,7 @@ button.cart {
   text-align: center;
 }
 
-.p_newp {
+.p_newText {
   pointer-events: none;
   display: table-cell;
   color: #FFFFFF;
@@ -200,18 +200,18 @@ button.cart {
   vertical-align: middle;
 }
 
-.p_href {
+.p_clickHandler {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 10px;
 }
 
-.p_img {
+.p_imgFront {
   transition: 0.7s;
 }
 
-.p_href:hover~.p_img {
+.p_clickHandler:hover~.p_imgFront {
   opacity: 0;
 }
 

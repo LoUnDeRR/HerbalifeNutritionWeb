@@ -1,10 +1,11 @@
-// DUMMY PRODUCTS (PRODUCT ID : DATA)
+// PRODUCT CMS
+// PROPERTY : VALUE
 const products = [
   {
     id: 123,
     name : "NAME IS WORKING",
     description : "DESC IS WORKING",
-    images:["dummy-pdt-b.png", "dummy-pdt-a.jpg"],
+    images:["dummy-pdt-b.png", "dummy-pdt-a.jpg", "p1.png", "p2.jpg", "p3.jpg"],
     price : 99.99,
     new : true
   },
