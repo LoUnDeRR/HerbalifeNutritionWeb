@@ -1,6 +1,5 @@
 function OpenOverlay() {
     let product = products[activeId];
-    // OPEN OVERLAY
     let overlay = document.getElementById("overlay");
     overlay.style.display = "flex";
     let title = document.getElementById("o_title");
@@ -30,19 +29,19 @@ function OpenOverlay() {
     BuildSlider();
 
     BuyOverlay();
-    AddToCartOverlay();
+    AtcOverlay();
 }
 
-function CloseOverlay() {
-    let overlayCloseFnc = document.getElementsByClassName('o_close_fnc');
+function CloseOverlaySetup() {
+    let overlayCloseFnc = document.getElementsByClassName('o_close_fnc_call');
     for (const element of overlayCloseFnc) {
         element.addEventListener("click", function (closeOverlay) {
             let overlay = document.getElementById("overlay");
             if (closeOverlay.target === element) {
                 document.getElementById("slider").style.left = 0;
                 overlay.style.display = 'none';
-                destroySlider();
-                document.getElementById('o_add_to_cart_container').removeEventListener("click", addToCartOverlayClick);
+                destroySlideshow();
+                document.getElementById('o_add_to_cart_container').removeEventListener("click", AtcOverlayClick);
                 document.getElementById('o_buy_container').removeEventListener("click", buyOverlayClick);
             }
         });
@@ -52,15 +51,15 @@ function CloseOverlay() {
 
 
 
-
-function AddToCartOverlay() {
-    // ADD TO CART OVERLAY
-    let addToCartFnc = document.getElementById('o_add_to_cart_container');
-    addToCartFnc.addEventListener("click", addToCartOverlayClick);
+// Atc = Add To Cart
+function AtcOverlay() {
+    let AtcFnc = document.getElementById('o_add_to_cart_container');
+    AtcFnc.addEventListener("click", AtcOverlayClick);
 }
 
-function addToCartOverlayClick() {
-    alert(`Not implemented! (addToCartFnc) index [${activeId}]`);
+// Atc = Add To Cart
+function AtcOverlayClick() {
+    alert(`Not implemented! (AtcOverlayClick) index [${activeId}]`);
 }
 
 
@@ -73,5 +72,5 @@ function BuyOverlay() {
 }
 
 function buyOverlayClick() {
-    alert(`Not implemented! (buyFunc) index [${activeId}]`);
+    alert(`Not implemented! (buyOverlayClick) index [${activeId}]`);
 }

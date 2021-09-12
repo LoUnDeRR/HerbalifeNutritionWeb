@@ -1,78 +1,71 @@
 function BuildSlider() {
 	var pos = 0;
+	// Count the slides
+	var totalSlides = document.querySelectorAll('#slider_wrap img').length - 2;
+	// Get the width of one slider
+	var sliderWidth = document.querySelector('#slider_wrap img').width;
 
-	var totalSlides = $('#slider_wrap img').length - 2;
-	//get the slide width
-	var sliderWidth = $('#slider_wrap img').width();
 	/*****************
 	  BUILD THE SLIDER
 	*****************/
-	//set width to be 'x' times the number of slides
-	$('#slider_wrap #slider').width(sliderWidth * totalSlides);
 
-	//next slide 	
-	$('#next').click(function () {
+	// Set the slider width which contains all slides - sliderWidth * totalSlides
+	document.querySelector('#slider_wrap #slider').style.width = `${sliderWidth * totalSlides}px`;
+
+
+	// Next slide 	
+	document.querySelector('#next').addEventListener("click", function () {
 		slideRight();
 	});
 
-	//previous slide
-	$('#previous').click(function () {
+	// Previous slide
+	document.querySelector('#previous').addEventListener("click", function () {
 		slideLeft();
 	});
 
-	/*************************
-	 //*> OPTIONAL SETTINGS
-	************************/
-	//for each slide 
-	$.each($('#slider_wrap ul li'), function () {
-		//create a pagination
-		var li = document.createElement('li');
-		$('#pagination_wrap ul').append(li);
-	});
 
-	//counter
-	//pagination
+	// For each slide 
+	document.querySelectorAll("#slider_wrap ul li").forEach(element => {
+		// Create a pagination
+		var li = document.createElement('li');
+		document.querySelector('#pagination_wrap ul').appendChild(li);
+	})
+
+	// Pagination
 	pagination();
 
 
 
-	/***********
-	 SLIDE LEFT
-	************/
+	
+	// Slide left
 	function slideLeft() {
 		pos--;
 		if (pos == -1) { pos = totalSlides - 1; }
-		$('#slider_wrap ul#slider').css('left', -(sliderWidth * pos));
-
-		//*> optional
+		document.querySelector('#slider').style.left = -(sliderWidth * pos) + 'px';
 		pagination();
 	}
 
-
-	/************
-	 SLIDE RIGHT
-	*************/
+	// Slide right
 	function slideRight() {
 		pos++;
 		if (pos == totalSlides) { pos = 0; }
-		$('#slider_wrap ul#slider').css('left', -(sliderWidth * pos));
-
-		//*> optional 
+		document.querySelector('#slider').style.left = -(sliderWidth * pos) + 'px';
 		pagination();
 	}
 
-	/************************
-	 //*> OPTIONAL SETTINGS
-	************************/
-
-
+	// Pagination
 	function pagination() {
-		$('#pagination_wrap ul li').removeClass('active');
-		$('#pagination_wrap ul li:eq(' + pos + ')').addClass('active');
+		// For each page
+		document.querySelectorAll('#pagination_wrap ul li').forEach(element => {
+			// Remove active class
+			element.classList.remove('active');
+		})
+		// Add class active to the page that's at 'pos'
+		document.querySelector("#pagination_wrap ul").children[pos].classList.add('active');
 	}
 }
 
-function destroySlider() {
-	document.getElementById('pagination_wrap').children[0].innerHTML = "";
-	document.getElementById('slider').innerHTML = "";
+function destroySlideshow() {
+	document.querySelector('#pagination_wrap ul').innerHTML = "";
+	document.querySelector('#slider').innerHTML = "";
 }

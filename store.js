@@ -97,27 +97,27 @@ var cart = {
       pPriceContainer.appendChild(pPrice);
 
       // PRODUCT ADD TO CART CONTAINER
-      let pATCContainer = document.createElement("div");
-      pATCContainer.className = "p_ATCContainer";
-      item.appendChild(pATCContainer);
+      let pAtcContainer = document.createElement("div");
+      pAtcContainer.className = "p_AtcContainer";
+      item.appendChild(pAtcContainer);
 
       // PRODUCT ADD TO CART ICON
-      let pATCIcon = document.createElement("img");
-      pATCIcon.src = cart.iURL + "addToCartIcon.png";
-      pATCIcon.className = "p_ATCIcon";
-      pATCContainer.appendChild(pATCIcon);
+      let pAtcIcon = document.createElement("img");
+      pAtcIcon.src = cart.iURL + "addToCartIcon.png";
+      pAtcIcon.className = "p_AtcIcon";
+      pAtcContainer.appendChild(pAtcIcon);
 
       // PRODUCT ADD TO CART INPUT
-      let pATCInput = document.createElement("input");
-      pATCInput.type = "button";
-      pATCInput.value = "";
-      pATCInput.className = "cart p_ATCInput";
-      pATCInput.onclick = cart.add;
-      pATCInput.dataset.id = id;
-      pATCContainer.appendChild(pATCInput);
+      let pAtcInput = document.createElement("input");
+      pAtcInput.type = "button";
+      pAtcInput.value = "";
+      pAtcInput.className = "cart p_AtcInput";
+      pAtcInput.onclick = cart.add;
+      pAtcInput.dataset.id = id;
+      pAtcContainer.appendChild(pAtcInput);
 
 
-
+      // CHECK IF PRODUCT IS NEW
       if (product.new === true) {
         // PRODUCT NEW
         let pNew = document.createElement("div");
@@ -138,7 +138,7 @@ var cart = {
     // (C4) LIST CURRENT CART ITEMS
     cart.list();
 
-    CloseOverlay();
+    CloseOverlaySetup();
   },
 
   // (D) LIST CURRENT CART ITEMS (IN HTML)

@@ -142,8 +142,8 @@ button.cart {
   vertical-align: middle;
   color: #FFFFFF;
 }
-
-.p_ATCContainer {
+/* Atc = Add to cart */
+.p_AtcContainer {
   height: 100px;
   width: 100px;
   background-color: #8EE158;
@@ -154,11 +154,11 @@ button.cart {
   box-shadow: 0px 4px 4px 0px rgb(0, 0, 0, 0.25);
 }
 
-.p_ATCContainer:hover {
+.p_AtcContainer:hover {
   background-color: #7ECC4C;
 }
 
-.p_ATCIcon {
+.p_AtcIcon {
   left: 18px;
   bottom: 20px;
   position: absolute;
@@ -166,7 +166,7 @@ button.cart {
   width: 60px;
 }
 
-.p_ATCInput {
+.p_AtcInput {
   position: absolute;
   cursor: pointer;
   height: 100px;
