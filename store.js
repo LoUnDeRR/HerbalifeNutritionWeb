@@ -116,7 +116,6 @@ var cart = {
       pAtcInput.dataset.id = id;
       pAtcContainer.appendChild(pAtcInput);
 
-
       // CHECK IF PRODUCT IS NEW
       if (product.new === true) {
         // PRODUCT NEW
@@ -232,6 +231,7 @@ var cart = {
     }
     cart.save();
     cart.list();
+    atcAlert();
   },
 
   // (F) CHANGE QUANTITY
@@ -283,3 +283,28 @@ var cart = {
   }
 };
 window.addEventListener("DOMContentLoaded", cart.init);
+
+function atcAlert() {
+  let alertATC = document.createElement('div');
+  alertATC.className = 'alert'
+  document.querySelector('#alert_flexbox').prepend(alertATC);
+
+  let spanATC = document.createElement('span');
+  spanATC.textContent = "Добавено в количката"
+  alertATC.appendChild(spanATC);
+
+  setInterval(function () {
+    alertATC.parentNode.removeChild(alertATC);
+  }, 3500);
+}
+
+function atc() {
+  if (cart.items[activeId] == undefined) {
+    cart.items[activeId] = 1;
+  } else {
+    cart.items[activeId]++;
+  }
+  cart.save();
+  cart.list();
+  atcAlert();
+}

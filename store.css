@@ -15,6 +15,7 @@
 
 body {
   background: #C4C4C4;
+  overflow-x: hidden;
 }
 
 /* (A) ENTIRE PAGE */
@@ -456,6 +457,65 @@ button.cart {
 .c_total {
   font-weight: 700;
   font-size: 1.2em;
+}
+
+#alert_flexbox {
+  z-index: 1000;
+  pointer-events: none;
+  position: absolute;
+  width: 380px;
+  bottom: 50px;
+  height: 200%;
+  right: 50px;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+}
+
+.alert {
+  width: 100%;
+  height: 50px;
+  margin: 5px auto;
+  padding-left: 30px;
+  position: relative;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);  
+  border-left: 5px solid #609e37;
+  border-radius: 5px;
+  background-color: #8fe158;
+  display: table;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-name: moveIn, fadeOut;
+  animation-fill-mode: forwards;
+  animation-delay: 0s, 2.5s;
+  animation-duration: 1.8s;
+  /* same for all */
+}
+
+@keyframes moveIn {
+  0% {
+      transform: translateX(100%);
+  }
+  60% {
+      transform: translateX(0%);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+.alert span {
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 19px;
+  color: #FFFFFF;
+  position: relative;
 }
 
 /* (D) RESPONSIVE */

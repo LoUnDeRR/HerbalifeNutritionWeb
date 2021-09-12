@@ -59,7 +59,8 @@ function AtcOverlay() {
 
 // Atc = Add To Cart
 function AtcOverlayClick() {
-    alert(`Not implemented! (AtcOverlayClick) index [${activeId}]`);
+    atc();
+    // alert(`Not implemented! (AtcOverlayClick) index [${activeId}]`);
 }
 
 
