@@ -1,4 +1,5 @@
 function OpenOverlay() {
+    //? Build the HTML overlay 
     let product = products[activeId];
     let overlay = document.getElementById("overlay");
     overlay.style.display = "flex";
@@ -8,7 +9,13 @@ function OpenOverlay() {
     description.innerHTML = product.description;
     let price = document.getElementById("o_price")
     price.children[0].innerHTML = product.price + " лв.";
+    if (products[activeId].new === false) {
+        document.getElementById('o_new').style.display = "none";
+    } else {
+        document.getElementById('o_new').style.display = "block";
+    }
 
+    //? Create images in HTML for the slider
     for (let index = 0; index < product.images.length; index++) {
         let liImg = document.createElement("li");
         document.getElementById('slider').appendChild(liImg);
@@ -18,16 +25,9 @@ function OpenOverlay() {
         liImg.appendChild(slideshowImage);
     }
 
-    if (products[activeId].new === false) {
-        document.getElementById('o_new').style.display = "none";
-    } else {
-        document.getElementById('o_new').style.display = "block";
-    }
-
-
-
     BuildSlider();
 
+    //? Buttons functionality
     BuyOverlay();
     AtcOverlay();
 }
@@ -49,29 +49,20 @@ function CloseOverlaySetup() {
 }
 
 
-
-
-// Atc = Add To Cart
+//? Atc = Add To Cart
 function AtcOverlay() {
     let AtcFnc = document.getElementById('o_add_to_cart_container');
     AtcFnc.addEventListener("click", AtcOverlayClick);
 }
-
-// Atc = Add To Cart
 function AtcOverlayClick() {
     atc();
-    // alert(`Not implemented! (AtcOverlayClick) index [${activeId}]`);
 }
-
-
 
 
 function BuyOverlay() {
-    // BUY OVERLAY
     let buyFnc = document.getElementById('o_buy_container');
     buyFnc.addEventListener("click", buyOverlayClick);
 }
-
 function buyOverlayClick() {
-    alert(`Not implemented! (buyOverlayClick) index [${activeId}]`);
+    alert(`Not implemented! (buyOverlayClick) index [${activeId}] #${products[activeId].id}`);
 }

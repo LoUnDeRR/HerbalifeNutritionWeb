@@ -1,43 +1,40 @@
 function BuildSlider() {
 	var pos = 0;
-	// Count the slides
+
 	var totalSlides = document.querySelectorAll('#slider_wrap img').length - 2;
-	// Get the width of one slider
+
+	//? Get the width of one slider
 	var sliderWidth = document.querySelector('#slider_wrap img').width;
 
-	/*****************
-	  BUILD THE SLIDER
-	*****************/
-
-	// Set the slider width which contains all slides - sliderWidth * totalSlides
+	//? Set the slider width which contains all slides - sliderWidth * totalSlides
 	document.querySelector('#slider_wrap #slider').style.width = `${sliderWidth * totalSlides}px`;
 
 
-	// Next slide 	
+	//? Next slide click listener	
 	document.querySelector('#next').addEventListener("click", function () {
 		slideRight();
 	});
 
-	// Previous slide
+	//? Previous slide click listener
 	document.querySelector('#previous').addEventListener("click", function () {
 		slideLeft();
 	});
 
 
-	// For each slide 
+	//? For each slide 
 	document.querySelectorAll("#slider_wrap ul li").forEach(element => {
-		// Create a pagination
+		//? Create a pagination
 		var li = document.createElement('li');
 		document.querySelector('#pagination_wrap ul').appendChild(li);
 	})
 
-	// Pagination
+	//? Initialize first pagination
 	pagination();
 
 
 
 	
-	// Slide left
+	//? Slide left
 	function slideLeft() {
 		pos--;
 		if (pos == -1) { pos = totalSlides - 1; }
@@ -45,7 +42,7 @@ function BuildSlider() {
 		pagination();
 	}
 
-	// Slide right
+	//? Slide right
 	function slideRight() {
 		pos++;
 		if (pos == totalSlides) { pos = 0; }
@@ -53,14 +50,14 @@ function BuildSlider() {
 		pagination();
 	}
 
-	// Pagination
+	//? Pagination
 	function pagination() {
-		// For each page
+		//? For each page
 		document.querySelectorAll('#pagination_wrap ul li').forEach(element => {
-			// Remove active class
+			//? Remove active class
 			element.classList.remove('active');
 		})
-		// Add class active to the page that's at 'pos'
+		//? Add class active to the page that's at 'pos'
 		document.querySelector("#pagination_wrap ul").children[pos].classList.add('active');
 	}
 }

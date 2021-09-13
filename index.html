@@ -8,45 +8,47 @@
 
   <link rel="stylesheet" href="slideshow.css">
   <link rel="stylesheet" href="store.css">
-  <link rel="stylesheet" href="alert.css">
   <script src="overlay.js"></script>
   <script src="store.js"></script>
   <script src="products.js"></script>
 </head>
 
 <body>
+  <!-- alerts -->
   <div id="alert_flexbox"></div>
+  <!-- !alerts -->
 
 
-  <div id="cart_wrap">
-    <!-- (B) PRODUCTS LIST -->
-    <div id="cart_products"></div>
+  <!-- products -->
+  <div id="cart_products"></div>
+  <!-- !products -->
 
-    <!-- (C) CURRENT CART -->
-    <div id="cart_items"></div>
-  </div>
+  <!-- cart -->
+  <div id="cart_items"></div>
+  <!-- !cart -->
 
+
+  <!-- overlay -->
   <div id="overlay" class="o_close_fnc_call">
     <div id="o_frame">
       <img src="images/closeIcon.svg" alt="" id="o_close" class="o_close_fnc_call">
 
-
-      <!-- Slideshow -->
-
+      <!-- slideshow -->
       <div id="o_slideshow">
         <div id="wrapper">
           <div id="slider_wrap">
             <ul id="slider">
             </ul>
 
-            <!--controls-->
+            <!-- controls -->
             <div class="btns" id="next">
               <img src="images/rightArrow.svg" alt="">
             </div>
             <div class="btns" id="previous">
               <img src="images/leftArrow.svg" alt="">
             </div>
-            <!--controls-->
+            <!-- !controls -->
+
           </div>
           <div id="pagination_wrap">
             <ul>
@@ -55,25 +57,22 @@
         </div>
       </div>
       <script src="slideshow.js"></script>
+      <!-- !slideshow -->
 
-
-
-
+      <!-- content -->
       <div id=o_new>
         <span>НОВО</span>
       </div>
       <article id="o_product_info_container">
-        <!-- possibly change header number -->
-        <h2 id="o_title">HERBALIFE 24 ACHIEVE PROTEIN BAR</h2>
+        <h2 id="o_title">Title</h2>
         <div id="o_divider"></div>
-        <p id="o_description">Лорем ипсум е един от най-често използваните в печатарството и графичния дизайн
-          заготовъчни текстове, служещи да запълват с текст онези графични елементи на документ или графична
-          презентация, които трябва да бъдат представени със собствен шрифт и типография, запълвайки ги със стандартен,
-          неотвличащ вниманието безсмислен текст. </p>
+        <p id="o_description">Description</p>
         <div id="o_price">
-          <span>16,00 лв.</span>
+          <span>00,00 лв.</span>
         </div>
       </article>
+      <!-- !content -->
+
       <div id="o_buy_container">
         <div id="o_buy_icon_container">
           <img src="images/buyIcon.svg" alt="">
@@ -88,7 +87,11 @@
       </div>
     </div>
   </div>
+  <!-- !overlay -->
+  
+  <!-- footer -->
   <a href="https://icons8.com" target="_blank">Website icons by Icons8</a>
+  <!-- !footer -->
 </body>
 
 </html>

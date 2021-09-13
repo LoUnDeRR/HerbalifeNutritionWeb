@@ -19,7 +19,7 @@
     flex-wrap: wrap;
 }
 
-.alert {
+.alertATC {
     width: 100%;
     height: 50px;
     margin: 10px auto;
@@ -59,7 +59,7 @@
     }
 }
 
-.alert span {
+.alertATC span {
     display: table-cell;
     vertical-align: middle;
     font-weight: 500;

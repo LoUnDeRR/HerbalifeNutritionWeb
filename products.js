@@ -1,4 +1,4 @@
-// PRODUCT CMS
+// PRODUCT CONTENT MANAGEMENT SYSTEM
 // PROPERTY : VALUE
 const products = [
   {

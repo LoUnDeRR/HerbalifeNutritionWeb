@@ -34,7 +34,7 @@ var cart = {
     cart.hPdt = document.getElementById("cart_products");
     cart.hItems = document.getElementById("cart_items");
 
-    // (C2) DRAW PRODUCTS LIST
+    // (C2) CREATE PRODUCTS
     cart.hPdt.innerHTML = "";
     let product, item;
     for (let id in products) {
@@ -96,18 +96,18 @@ var cart = {
       pPrice.className = "p_price";
       pPriceContainer.appendChild(pPrice);
 
-      // PRODUCT ADD TO CART CONTAINER
+      // PRODUCT ATC CONTAINER (ATC == Add To Cart)
       let pAtcContainer = document.createElement("div");
       pAtcContainer.className = "p_AtcContainer";
       item.appendChild(pAtcContainer);
 
-      // PRODUCT ADD TO CART ICON
+      // PRODUCT ATC ICON
       let pAtcIcon = document.createElement("img");
       pAtcIcon.src = cart.iURL + "addToCartIcon.png";
       pAtcIcon.className = "p_AtcIcon";
       pAtcContainer.appendChild(pAtcIcon);
 
-      // PRODUCT ADD TO CART INPUT
+      // PRODUCT ATC INPUT
       let pAtcInput = document.createElement("input");
       pAtcInput.type = "button";
       pAtcInput.value = "";
@@ -118,7 +118,7 @@ var cart = {
 
       // CHECK IF PRODUCT IS NEW
       if (product.new === true) {
-        // PRODUCT NEW
+        // PRODUCT NEW CONTAINER
         let pNew = document.createElement("div");
         pNew.className = "p_new";
         item.appendChild(pNew);
@@ -137,6 +137,7 @@ var cart = {
     // (C4) LIST CURRENT CART ITEMS
     cart.list();
 
+    // (C5) SETUP OVERLAY CLOSING FUNCTIONS
     CloseOverlaySetup();
   },
 
@@ -231,6 +232,8 @@ var cart = {
     }
     cart.save();
     cart.list();
+
+    // DISPLAY ATC ALERT
     atcAlert();
   },
 
@@ -284,20 +287,23 @@ var cart = {
 };
 window.addEventListener("DOMContentLoaded", cart.init);
 
+// CREATE HTML STRUCTURE FOR AN ALERT
 function atcAlert() {
   let alertATC = document.createElement('div');
-  alertATC.className = 'alert'
+  alertATC.className = 'alertATC'
   document.querySelector('#alert_flexbox').prepend(alertATC);
 
   let spanATC = document.createElement('span');
   spanATC.textContent = "Добавено в количката"
   alertATC.appendChild(spanATC);
 
-  setInterval(function () {
+  // REMOVE HTML AFTER X MILLISECONDS
+  setTimeout(function () {
     alertATC.parentNode.removeChild(alertATC);
   }, 3500);
 }
 
+// ADD ITEM TO CART
 function atc() {
   if (cart.items[activeId] == undefined) {
     cart.items[activeId] = 1;
@@ -306,5 +312,6 @@ function atc() {
   }
   cart.save();
   cart.list();
+  
   atcAlert();
 }

@@ -1,18 +1,11 @@
 :root {
-	--size: 535px;
+	--slideshowSize: 535px;
 	--btnSize: 55px;
 }
 
-#o_slideshow * {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	box-sizing: border-box;
-}
-
 #wrapper {
-	width: var(--size);
-	height: var(--size);
+	width: var(--slideshowSize);
+	height: var(--slideshowSize);
 	position: relative;
 }
 
@@ -36,8 +29,8 @@
 #slider_wrap #slider li {
 	float: left;
 	position: relative;
-	width: var(--size);
-	height: var(--size);
+	width: var(--slideshowSize);
+	height: var(--slideshowSize);
 }
 
 #slider_wrap #slider img {
@@ -45,8 +38,6 @@
 	width: 100%;
 	object-fit: cover;
 }
-
-/*btns*/
 
 .btns {
 	position: absolute;
@@ -66,15 +57,15 @@
 #previous img {
 	position: absolute;
 	left: 45%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #next img {
 	position: absolute;
 	left: 55%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #next {
@@ -84,8 +75,6 @@
 #previous {
 	left: 5px;
 }
-
-/*bar*/
 
 #pagination_wrap {
 	margin-top: 10px;
@@ -117,7 +106,7 @@
 	background-color: #476080;
 }
 
-/*ANIMATION*/
+/*? ANIMATION */
 
 #slider_wrap ul, #pagination-wrap ul li {
 	transition: all 0.3s cubic-bezier(1, .01, .32, 1);
