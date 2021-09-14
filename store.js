@@ -1,12 +1,12 @@
 var activeId;
 var cart = {
-  // (A) PROPERTIES
+  // $$ (A) PROPERTIES
   hPdt: null, // HTML products list
   hItems: null, // HTML current cart
   items: {}, // Current items in cart
   iURL: "images/", // Product image URL folder
 
-  // (B) LOCALSTORAGE CART
+  // $$ (B) LOCALSTORAGE CART
   // (B1) SAVE CURRENT CART INTO LOCALSTORAGE
   save: function () {
     localStorage.setItem("cart", JSON.stringify(cart.items));
@@ -28,7 +28,7 @@ var cart = {
     }
   },
 
-  // (C) INITIALIZE
+  // $$ (C) INITIALIZE
   init: function () {
     // (C1) GET HTML ELEMENTS
     cart.hPdt = document.getElementById("cart_products");
@@ -141,7 +141,7 @@ var cart = {
     CloseOverlaySetup();
   },
 
-  // (D) LIST CURRENT CART ITEMS (IN HTML)
+  // $$ (D) LIST CURRENT CART ITEMS (IN HTML)
   list: function () {
     // (D1) RESET
     cart.hItems.innerHTML = "";
@@ -223,7 +223,7 @@ var cart = {
     }
   },
 
-  // (E) ADD ITEM INTO CART
+  // $$ (E) ADD ITEM INTO CART
   add: function () {
     if (cart.items[this.dataset.id] == undefined) {
       cart.items[this.dataset.id] = 1;
@@ -237,7 +237,7 @@ var cart = {
     atcAlert();
   },
 
-  // (F) CHANGE QUANTITY
+  // $$ (F) CHANGE QUANTITY
   change: function () {
     // (F1) REMOVE ITEM
     if (this.value <= 0) {
@@ -257,14 +257,14 @@ var cart = {
     }
   },
 
-  // (G) REMOVE ITEM FROM CART
+  // $$ (G) REMOVE ITEM FROM CART
   remove: function () {
     delete cart.items[this.dataset.id];
     cart.save();
     cart.list();
   },
 
-  // (H) CHECKOUT
+  // $$ (H) CHECKOUT
   checkout: function () {
     // SEND DATA TO SERVER
     // CHECKS
@@ -287,7 +287,7 @@ var cart = {
 };
 window.addEventListener("DOMContentLoaded", cart.init);
 
-// CREATE HTML STRUCTURE FOR AN ALERT
+// $$ CREATE HTML STRUCTURE FOR AN ALERT
 function atcAlert() {
   let alertATC = document.createElement('div');
   alertATC.className = 'alertATC'
@@ -303,7 +303,7 @@ function atcAlert() {
   }, 3500);
 }
 
-// ADD ITEM TO CART
+// $$ ADD ITEM TO CART
 function atc() {
   if (cart.items[activeId] == undefined) {
     cart.items[activeId] = 1;
