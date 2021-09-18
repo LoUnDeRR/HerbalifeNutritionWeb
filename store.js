@@ -53,7 +53,7 @@ var cart = {
       let pClickHandler = document.createElement("a");
       pClickHandler.addEventListener('click', function () {
         activeId = id;
-        OpenOverlay();
+        OpenProductOverlay();
       });
       pClickHandler.className = "p_clickHandler";
       pImgClickHandlerContainer.appendChild(pClickHandler);

@@ -1,7 +1,8 @@
-function OpenOverlay() {
+
+function OpenProductOverlay() {
     //? Build the HTML overlay 
     let product = products[activeId];
-    let overlay = document.getElementById("overlay");
+    let overlay = document.getElementById("open_product_overlay");
     overlay.style.display = "flex";
     let title = document.getElementById("o_title");
     title.innerHTML = product.name;
@@ -36,10 +37,10 @@ function CloseOverlaySetup() {
     let overlayCloseFnc = document.getElementsByClassName('o_close_fnc_call');
     for (const element of overlayCloseFnc) {
         element.addEventListener("click", function (closeOverlay) {
-            let overlay = document.getElementById("overlay");
             if (closeOverlay.target === element) {
                 document.getElementById("slider").style.left = 0;
-                overlay.style.display = 'none';
+                document.getElementById("open_product_overlay").style.display = 'none';
+                document.getElementById("open_cart_overlay").style.display = 'none';
                 destroySlideshow();
                 document.getElementById('o_add_to_cart_container').removeEventListener("click", AtcOverlayClick);
                 document.getElementById('o_buy_container').removeEventListener("click", buyOverlayClick);

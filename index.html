@@ -27,9 +27,49 @@
   <div id="cart_items"></div>
   <!-- !cart -->
 
+  <div id="open_cart_button"></div>
+
+
+  <!-- $$ cart overlay -->
+  <div class="overlay o_close_fnc_call" id="open_cart_overlay">
+    <div id="oc_frame">
+      <img src="images/closeIcon.svg" alt="" id="oc_close" class="o_close o_close_fnc_call">
+
+      <div id="co_products_container">
+        <div id="co_categories">
+          <span id="co_cat_product">ПРОДУКТ</span>
+          <span id="co_cat_amount">БРОЙКА</span>
+          <span id="co_cat_price">ЦЕНА</span>
+        </div>
+        <div id="co_products_in_cart_container">
+          <div id="co_products_flex">
+            <!--? products -->
+          </div>
+        </div>
+        <div id="co_free_delivery">
+          <span>Доставката е безплатна за поръчки над 65 лв.</span>
+        </div>
+        <div id="co_total_container">
+          <div id="co_total_delivery">
+            <span>Доставка: 5,40 лв.</span>
+          </div>
+          <div id="co_total_price">
+            <span>Общо: 69,35 лв.</span>
+          </div>
+        </div>
+      </div>
+      <div id="co_continue_container">
+        <div id="co_continue_img_container">
+          <img src="images/continueIcon.svg" alt="">
+        </div>
+        <span>ПРОДЪЛЖИ</span>
+      </div>
+    </div>
+  </div>
+  <!-- !cart overlay -->
 
   <!-- $$ overlay -->
-  <div id="overlay" class="o_close_fnc_call">
+  <div class="overlay o_close_fnc_call" id="open_product_overlay">
     <div id="o_frame">
       <img src="images/closeIcon.svg" alt="" id="o_close" class="o_close_fnc_call">
 
@@ -88,7 +128,7 @@
     </div>
   </div>
   <!-- !overlay -->
-  
+
   <!-- $$ footer -->
   <a href="https://icons8.com" target="_blank">Website icons by Icons8</a>
   <!-- !footer -->
