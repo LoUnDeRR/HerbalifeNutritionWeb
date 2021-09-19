@@ -41,6 +41,7 @@ function CloseOverlaySetup() {
                 document.getElementById("slider").style.left = 0;
                 document.getElementById("open_product_overlay").style.display = 'none';
                 document.getElementById("open_cart_overlay").style.display = 'none';
+                document.getElementById("co_products_flex").innerHTML = "";
                 destroySlideshow();
                 document.getElementById('o_add_to_cart_container').removeEventListener("click", AtcOverlayClick);
                 document.getElementById('o_buy_container').removeEventListener("click", buyOverlayClick);

@@ -758,7 +758,8 @@ button.cart {
   height: 30px;
   top: 50%;
   transform: translate(0, -50%);
-  left: 30px
+  left: 30px;
+  cursor: pointer;
 }
 
 .co_products_product_image {
@@ -880,7 +881,7 @@ button.cart {
 }
 
 .co_products_product_price_container {
-  width: 120px;
+  width: 135px;
   height: 45px;
   position: absolute;
   background-color: #58A0FF;
@@ -898,4 +899,23 @@ button.cart {
   font-size: 24px;
   color: #FFFFFF;
   font-weight: 400;
+}
+
+#cart_empty_msg {
+  display: none;
+  font-size: 48px;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  color: #00000090;
+}
+
+#cart_empty_img {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  height: 500px;
 }
