@@ -139,6 +139,11 @@ var cart = {
 
     // (C5) SETUP OVERLAY CLOSING FUNCTIONS
     CloseOverlaySetup();
+
+    // (C6) CART BUTTON SETUP
+    document.getElementById('open_cart_button').addEventListener("click", function () {
+      OpenCartOverlay();
+    });
   },
 
   // $$ (D) LIST CURRENT CART ITEMS (IN HTML)
