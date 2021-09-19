@@ -1,9 +1,8 @@
+var sum = 0;
 function OpenCartOverlay() {
     document.getElementById('open_cart_overlay').style.display = 'flex';
     let productsFlex = document.getElementById('co_products_flex');
 
-
-    let sum = 0;
     for (let index in cart.items) {
         let eachProduct = products[index]
 
@@ -51,7 +50,7 @@ function OpenCartOverlay() {
         productEachPriceContainer.appendChild(productEachPrice);
 
         let productEachPrice2 = document.createElement('span');
-        productEachPrice2.textContent = eachProduct.price + " лв.";
+        productEachPrice2.textContent = eachProduct.price.toFixed(2) + " лв.";
         productEachPrice2.className = "co_products_product_each_price2";
         productEachPriceContainer.appendChild(productEachPrice2);
 
@@ -87,12 +86,11 @@ function OpenCartOverlay() {
 
         let productPrice = document.createElement('price');
         productPrice.className = "co_products_product_price p" + index;
-        productPrice.textContent = cart.items[index] * eachProduct.price + " лв.";
+        productPrice.textContent = (cart.items[index] * eachProduct.price).toFixed(2) + " лв.";
         sum += cart.items[index] * eachProduct.price;
         productPriceBox.appendChild(productPrice);
-
     }
-    document.getElementById("co_total_price_text").textContent = sum + " лв.";
+    document.getElementById("co_total_price_text").textContent = sum.toFixed(2) + " лв.";
     CartIsEmpty();
 }
 
@@ -100,14 +98,23 @@ function IncreasePAmount(index) {
     cart.items[index]++;
     console.log(index);
     document.getElementsByClassName("co_products_product_count p" + index)[0].textContent = cart.items[index];
-    document.getElementsByClassName("co_products_product_price p" + index)[0].textContent = products[index].price * cart.items[index] + " лв.";
+    document.getElementsByClassName("co_products_product_price p" + index)[0].textContent = (products[index].price * cart.items[index]).toFixed(2) + " лв.";
+   
+    sum += products[index].price;
+    console.log(sum);
+    document.getElementById("co_total_price_text").textContent = sum.toFixed(2) + " лв.";
+
     localStorage.setItem("cart", JSON.stringify(cart.items));
 }
 function DecreasePAmount(index) {
     if (cart.items[index] > 1) {
         cart.items[index]--;
         document.getElementsByClassName("co_products_product_count p" + index)[0].textContent = cart.items[index];
-        document.getElementsByClassName("co_products_product_price p" + index)[0].textContent = products[index].price * cart.items[index] + " лв.";
+        document.getElementsByClassName("co_products_product_price p" + index)[0].textContent = (products[index].price * cart.items[index]).toFixed(2) + " лв.";
+
+        sum -= products[index].price;
+        document.getElementById("co_total_price_text").textContent = sum.toFixed(2) + " лв.";
+
         localStorage.setItem("cart", JSON.stringify(cart.items));
         CartIsEmpty();
     }
