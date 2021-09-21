@@ -28,31 +28,30 @@ var cart = {
 
     // CLOSE OVERLAY SETUP
     CloseOverlaySetup();
+  },
+
+  // ADD TO CART
+  atc: function (productId) {
+    let id;
+    if (productId != null) {  //? if added from product btn -> id = productId; if added from overlay id = activeId
+      id = productId;
+    } else {
+      id = cart.activeId;
+    }
+  
+    if (cart.items[id] == undefined) {  //? if is first -> product count = 1;
+      cart.items[id] = 1;
+    } else {
+      cart.items[id]++;
+    }
+  
+    cart.save();
+    atcAlert();
   }
 };
 window.addEventListener("DOMContentLoaded", cart.init); //? On load --> cart.init()
 
-// ADD TO CART
-function atc(productId) {
-  let id;
-  if (productId != null) {  //? if added from product btn -> id = productId; if added from overlay id = activeId
-    id = productId;
-  } else {
-    id = cart.activeId;
-  }
-
-  if (cart.items[id] == undefined) {  //? if is first -> product count = 1;
-    cart.items[id] = 1;
-  } else {
-    cart.items[id]++;
-  }
-
-  cart.save();
-  atcAlert();
-}
-
-
-// * CHECKOUT PLAN
+//* CHECKOUT PLAN
 
 //* SEND DATA TO SERVER
 //* CHECKS

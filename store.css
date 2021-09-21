@@ -296,10 +296,12 @@ button.cart {
   position: relative;
   left: 80px;
   top: 100px;
+  pointer-events: none;
 }
 
 #o_slideshow * {
   list-style: none;
+  pointer-events: auto;
 }
 
 #o_new {
@@ -622,10 +624,7 @@ button.cart {
   left: 50%;
   overflow-y: scroll;
   overflow-x: hidden;
-  /*TODO Do some magic to make it scrollable */
 }
-
-/*TODO Products CSS*/
 
 #co_free_delivery {
   position: absolute;

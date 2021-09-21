@@ -1,4 +1,4 @@
-
+// TODO optimize - turn into interface and merge with cartOverlay.js
 function OpenProductOverlay() {
     //? Build the HTML overlay 
     let product = products[cart.activeId];
@@ -26,11 +26,11 @@ function OpenProductOverlay() {
         liImg.appendChild(slideshowImage);
     }
 
-    BuildSlider();
+    slideshow.buildSlider();
 
     //? Buttons functionality
-    BuyOverlay();
-    AtcOverlay();
+    BuyOverlay(); // TODO optimize - reduce functions
+    AtcOverlay(); // TODO optimize - reduce functions
 }
 
 function CloseOverlaySetup() {
@@ -42,7 +42,7 @@ function CloseOverlaySetup() {
                 document.getElementById("open_product_overlay").style.display = 'none';
                 document.getElementById("open_cart_overlay").style.display = 'none';
                 document.getElementById("co_products_flex").innerHTML = "";
-                destroySlideshow();
+                slideshow.destroySlideshow();
                 document.getElementById('o_add_to_cart_container').removeEventListener("click", AtcOverlayClick);
                 document.getElementById('o_buy_container').removeEventListener("click", buyOverlayClick);
             }
@@ -57,7 +57,7 @@ function AtcOverlay() {
     AtcFnc.addEventListener("click", AtcOverlayClick);
 }
 function AtcOverlayClick() {
-    atc();
+    cart.atc();
 }
 
 

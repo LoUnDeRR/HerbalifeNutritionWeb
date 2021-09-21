@@ -1,62 +1,62 @@
-var pos;
-var totalSlides;
-var sliderWidth;
-function BuildSlider() {
-	pos = 0;
-	totalSlides = document.querySelectorAll('#slider_wrap img').length - 2;
-	//? Get the width of one slider
-	sliderWidth = document.querySelector('#slider_wrap img').width;
+var slideshow = {
+	pos: null,
+	totalSlides: null,
+	sliderWidth: null,
 
-	//? Set the slider width which contains all slides - sliderWidth * totalSlides
-	document.querySelector('#slider_wrap #slider').style.width = `${sliderWidth * totalSlides}px`;
+	buildSlider: function () {
+		slideshow.pos = 0;
+		slideshow.totalSlides = document.querySelectorAll('#slider_wrap img').length - 2;
+		//? Get the width of one slider
+		slideshow.sliderWidth = document.querySelector('#slider_wrap img').width;
 
-	//? Next slide click listener	
-	document.querySelector('#next').addEventListener("click", slideRight);
+		//? Set the slider width which contains all slides - sliderWidth * totalSlides
+		document.querySelector('#slider_wrap #slider').style.width = `${slideshow.sliderWidth * slideshow.totalSlides}px`;
 
-	//? Previous slide click listener
-	document.querySelector('#previous').addEventListener("click", slideLeft);
+		//? Next slide click listener	
+		document.querySelector('#next').addEventListener("click", slideshow.slideRight);
 
-	//? For each slide 
-	document.querySelectorAll("#slider_wrap ul li").forEach(element => {
-		//? Create a pagination
-		var li = document.createElement('li');
-		document.querySelector('#pagination_wrap ul').appendChild(li);
-	})
+		//? Previous slide click listener
+		document.querySelector('#previous').addEventListener("click", slideshow.slideLeft);
 
-	//? Initialize first pagination
-	pagination();
-}
+		//? For each slide 
+		document.querySelectorAll("#slider_wrap ul li").forEach(element => {
+			//? Create a pagination
+			var li = document.createElement('li');
+			document.querySelector('#pagination_wrap ul').appendChild(li);
+		})
 
-function destroySlideshow() {
-	document.querySelector('#next').removeEventListener("click", slideRight);
-	document.querySelector('#previous').removeEventListener("click", slideLeft);
-	document.querySelector('#pagination_wrap ul').innerHTML = "";
-	document.querySelector('#slider').innerHTML = "";
-}
+		//? Initialize first pagination
+		slideshow.pagination();
+	},
 
-//? Slide left
-function slideLeft() {
-	pos--;
-	if (pos == -1) { pos = totalSlides - 1; }
-	document.querySelector('#slider').style.left = -(sliderWidth * pos) + 'px';
-	pagination();
-}
+	slideLeft: function () {
+		slideshow.pos--;
+		if (slideshow.pos == -1) { slideshow.pos = slideshow.totalSlides - 1; }
+		document.querySelector('#slider').style.left = -(slideshow.sliderWidth * slideshow.pos) + 'px';
+		slideshow.pagination();
+	},
 
-//? Slide right
-function slideRight() {
-	pos++;
-	if (pos == totalSlides) { pos = 0; }
-	document.querySelector('#slider').style.left = -(sliderWidth * pos) + 'px';
-	pagination();
-}
+	slideRight: function () {
+		slideshow.pos++;
+		if (slideshow.pos == slideshow.totalSlides) { slideshow.pos = 0; }
+		document.querySelector('#slider').style.left = -(slideshow.sliderWidth * slideshow.pos) + 'px';
+		slideshow.pagination();
+	},
 
-//? Pagination
-function pagination() {
-	//? For each page
-	document.querySelectorAll('#pagination_wrap ul li').forEach(element => {
-		//? Remove active class
-		element.classList.remove('active');
-	})
-	//? Add class active to the page that's at 'pos'
-	document.querySelector("#pagination_wrap ul").children[pos].classList.add('active');
+	pagination: function () {
+		//? For each page
+		document.querySelectorAll('#pagination_wrap ul li').forEach(element => {
+			//? Remove active class
+			element.classList.remove('active');
+		})
+		//? Add class active to the page that's at 'pos'
+		document.querySelector("#pagination_wrap ul").children[slideshow.pos].classList.add('active');
+	},
+	
+	destroySlideshow: function () {
+		document.querySelector('#next').removeEventListener("click", slideshow.slideRight);
+		document.querySelector('#previous').removeEventListener("click", slideshow.slideLeft);
+		document.querySelector('#pagination_wrap ul').innerHTML = "";
+		document.querySelector('#slider').innerHTML = "";
+	}
 }
