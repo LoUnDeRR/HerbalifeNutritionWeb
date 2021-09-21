@@ -1,7 +1,7 @@
 
 function OpenProductOverlay() {
     //? Build the HTML overlay 
-    let product = products[activeId];
+    let product = products[cart.activeId];
     let overlay = document.getElementById("open_product_overlay");
     overlay.style.display = "flex";
     let title = document.getElementById("o_title");
@@ -10,7 +10,7 @@ function OpenProductOverlay() {
     description.innerHTML = product.description;
     let price = document.getElementById("o_price")
     price.children[0].innerHTML = product.price + " лв.";
-    if (products[activeId].new === false) {
+    if (products[cart.activeId].new === false) {
         document.getElementById('o_new').style.display = "none";
     } else {
         document.getElementById('o_new').style.display = "block";
@@ -66,5 +66,5 @@ function BuyOverlay() {
     buyFnc.addEventListener("click", buyOverlayClick);
 }
 function buyOverlayClick() {
-    alert(`Not implemented! (buyOverlayClick) index [${activeId}] #${products[activeId].id}`);
+    alert(`Not implemented! (buyOverlayClick) index [${cart.activeId}] #${products[cart.activeId].id}`);
 }

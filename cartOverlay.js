@@ -5,7 +5,7 @@ function OpenCartOverlay() {
 
     for (let index in cart.items) {
         let eachProduct = products[index]
-
+        console.log(eachProduct);
         let productContainer = document.createElement('div');
         productContainer.className = "co_product_container p" + index;
         productsFlex.appendChild(productContainer);
