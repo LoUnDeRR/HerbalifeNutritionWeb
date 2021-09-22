@@ -23,30 +23,26 @@ var cart = {
 
     // CART BUTTON
     document.getElementById('open_cart_button').addEventListener("click", function () {
-      OpenCartOverlay();
+      overlay.openCartOverlay();
     });
 
     // CLOSE OVERLAY SETUP
-    CloseOverlaySetup();
+    overlay.closeOverlaySetup();
   },
 
   // ADD TO CART
   atc: function (productId) {
-    let id;
-    if (productId != null) {  //? if added from product btn -> id = productId; if added from overlay id = activeId
-      id = productId;
+    if (cart.items[productId] == undefined) {  //? if is first -> product count = 1;
+      cart.items[productId] = 1;
     } else {
-      id = cart.activeId;
+      cart.items[productId]++;
     }
-  
-    if (cart.items[id] == undefined) {  //? if is first -> product count = 1;
-      cart.items[id] = 1;
-    } else {
-      cart.items[id]++;
-    }
-  
     cart.save();
     atcAlert();
+  },
+
+  buy: function () {
+    alert(`Not implemented! (buyOverlayClick) index [${cart.activeId}] #${products[cart.activeId].id}`);
   }
 };
 window.addEventListener("DOMContentLoaded", cart.init); //? On load --> cart.init()

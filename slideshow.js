@@ -54,6 +54,7 @@ var slideshow = {
 	},
 	
 	destroySlideshow: function () {
+		document.getElementById("slider").style.left = 0;
 		document.querySelector('#next').removeEventListener("click", slideshow.slideRight);
 		document.querySelector('#previous').removeEventListener("click", slideshow.slideLeft);
 		document.querySelector('#pagination_wrap ul').innerHTML = "";

@@ -17,7 +17,7 @@ function productsConstruction() {
         let pClickHandler = document.createElement("a");
         pClickHandler.addEventListener('click', function () {
             cart.activeId = id;
-            OpenProductOverlay();
+            overlay.openProductOverlay();
         });
         pClickHandler.className = "p_clickHandler";
         pImgClickHandlerContainer.appendChild(pClickHandler);
@@ -100,6 +100,7 @@ function cartOverlayConstruction() {
 
     for (let index in cart.items) {
         let eachProduct = products[index]
+
         let productContainer = document.createElement('div');
         productContainer.className = "co_product_container p" + index;
         productsFlex.appendChild(productContainer);
@@ -107,7 +108,7 @@ function cartOverlayConstruction() {
         let removeBtn = document.createElement('img');
         removeBtn.src = "images/removeFromCart.svg";
         removeBtn.className = "co_products_remove_icon";
-        removeBtn.addEventListener("click", RemoveP.bind(this, index));
+        removeBtn.addEventListener("click", overlay.removeP.bind(this, index));
         productContainer.appendChild(removeBtn);
 
         let productImage = document.createElement('img');
@@ -155,19 +156,18 @@ function cartOverlayConstruction() {
         let productIncrease = document.createElement('img');
         productIncrease.className = "co_products_product_increase";
         productIncrease.src = "images/leftArrow.svg";
-        productIncrease.addEventListener("click", IncreasePAmount.bind(this, index));
+        productIncrease.addEventListener("click", overlay.increasePAmount.bind(this, index));
         productContainer.appendChild(productIncrease);
 
         let productCount = document.createElement('span');
         productCount.className = "co_products_product_count p" + index;
         productCount.textContent = cart.items[index];
         productContainer.appendChild(productCount);
-        //TODO product count
 
         let productDecrease = document.createElement('img');
         productDecrease.className = "co_products_product_decrease";
         productDecrease.src = "images/rightArrow.svg";
-        productDecrease.addEventListener("click", DecreasePAmount.bind(this, index));
+        productDecrease.addEventListener("click", overlay.decreasePAmount.bind(this, index));
         productContainer.appendChild(productDecrease);
 
         let productDividerRight = document.createElement('div');
@@ -181,9 +181,9 @@ function cartOverlayConstruction() {
         let productPrice = document.createElement('price');
         productPrice.className = "co_products_product_price p" + index;
         productPrice.textContent = (cart.items[index] * eachProduct.price).toFixed(2) + " лв.";
-        sum += cart.items[index] * eachProduct.price;
+        overlay.totalSum += cart.items[index] * eachProduct.price;
         productPriceBox.appendChild(productPrice);
     }
-    document.getElementById("co_total_price_text").textContent = sum.toFixed(2) + " лв.";
+    document.getElementById("co_total_price_text").textContent = overlay.totalSum.toFixed(2) + " лв.";
 
 }
