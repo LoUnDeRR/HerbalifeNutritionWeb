@@ -23,11 +23,11 @@ var cart = {
 
     // CART BUTTON
     document.getElementById('open_cart_button').addEventListener("click", function () {
-      overlay.openCartOverlay();
+      overlay.openCart();
     });
 
     // CLOSE OVERLAY SETUP
-    overlay.closeOverlaySetup();
+    overlay.closeOverlayInit();
   },
 
   // ADD TO CART

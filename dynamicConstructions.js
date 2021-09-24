@@ -17,7 +17,7 @@ function productsConstruction() {
         let pClickHandler = document.createElement("a");
         pClickHandler.addEventListener('click', function () {
             cart.activeId = id;
-            overlay.openProductOverlay();
+            overlay.openProduct();
         });
         pClickHandler.className = "p_clickHandler";
         pImgClickHandlerContainer.appendChild(pClickHandler);

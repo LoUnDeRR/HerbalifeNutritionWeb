@@ -1,4 +1,4 @@
-// $$ CREATE HTML STRUCTURE FOR AN ALERT
+// CREATE HTML STRUCTURE FOR AN ALERT
 function atcAlert() {
     let alertATC = document.createElement('div');
     alertATC.className = 'alertATC'

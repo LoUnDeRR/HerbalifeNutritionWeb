@@ -1,5 +1,5 @@
 var overlay = {
-    openProductOverlay: function () {
+    openProduct: function () {
         //? Build the HTML overlay 
         let product = products[cart.activeId];
         let productOverlay = document.getElementById("open_product_overlay");
@@ -29,11 +29,11 @@ var overlay = {
         slideshow.buildSlider();
 
         //? Buttons functionality
-        overlay.buyOverlay(); // TODO optimize - reduce functions
-        overlay.atcOverlay(); // TODO optimize - reduce functions
+        overlay.buyOverlay();
+        overlay.atcOverlay(); 
     },
 
-    closeOverlaySetup: function () {
+    closeOverlayInit: function () {
         let overlayCloseFnc = document.getElementsByClassName('o_close_fnc_call');
         for (const element of overlayCloseFnc) {
             element.addEventListener("click", function (closeOverlay) {
@@ -69,7 +69,7 @@ var overlay = {
 
     totalSum: 0,
 
-    openCartOverlay: function () {
+    openCart: function () {
         document.getElementById('open_cart_overlay').style.display = 'flex';
         cartOverlayConstruction();
         overlay.cartIsEmpty();
