@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="checkout.css">
+    <script src="checkout.js"></script>
+    <script src="products.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+
+<body>
+    <span>Total Price: </span><span id=checkout_total_price></span><span> лв.</span>
+    <ul id=checkoutItems>
+
+    </ul>
+
+
+
+    
+
+<form method="post" action="https://api.formcake.com/api/form/9fcd2568-b7eb-44a8-91bc-32f8ba5a9186/submission">
+    <label for="name">Име</label>
+    <input name="name" type="text" placeholder="Име"><br>
+
+    <label for="telephone">Телефон</label>
+    <input name="telephone" type="text" placeholder="Тел. номер"><br>
+
+    <label for="email">Email</label>
+    <input name="email" type="email" placeholder="example@example.com" value=""><br>
+
+    <input id="checkoutInputItems" type="hidden" name="items" value=""/>
+
+    <button type="submit">Изпрати Имейл</button>
+</form>
+
+
+</body>
+
+</html>

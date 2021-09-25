@@ -26,6 +26,9 @@ var cart = {
       overlay.openCart();
     });
 
+    // CHECKOUT SETUP
+    overlay.checkout();
+
     // CLOSE OVERLAY SETUP
     overlay.closeOverlayInit();
   },

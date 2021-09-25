@@ -125,6 +125,13 @@ var overlay = {
             document.getElementById("cart_empty_msg").style.display = 'none';
             document.getElementById("cart_empty_img").style.display = 'none';
         }
+    },
+
+    checkout: function () {
+        let continueBtn = document.getElementById("co_continue_container");
+        continueBtn.addEventListener("click", function () {
+            window.location.href = 'checkout.html';
+        });
     }
 
 }
