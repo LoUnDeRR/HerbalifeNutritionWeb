@@ -81,6 +81,7 @@ button.cart {
 /* $$ STORE {PRODUCTS} */
 
 #cart_products {
+  position: relative;
   width: 70%;
   margin: 0 auto;
   display: grid;
@@ -919,4 +920,26 @@ button.cart {
   transform: translate(-50%, -50%);
   height: 500px;
   width: 550px;
+}
+
+#pages_container {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: right;
+  bottom: -80px;
+  right: 0;
+  flex-wrap: wrap;
+  background-color: firebrick;
+}
+
+.page_buttons {
+  width: 80px;
+  height: 80px;
+  background-color: dodgerblue;
+  border: solid 3px black;
+}
+
+.page_btn_active {
+  background-color: purple;
 }
