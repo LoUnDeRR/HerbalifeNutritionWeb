@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="slideshowMain.css">
 </head>
+
 <body>
-    
+    <!-- Navbar -->
+    <div class="navbar">
+        <img class="navbar_logo" src="/siteImages/logoHLWhite.png" alt="">
+        <ul class="navbar_nav">
+            <li class="navbar_nav_active">НАЧАЛО</li>
+            <li>МАГАЗИН</li>
+            <li>ЗА НАС</li>
+            <li>ЗА КОНТАКТ</li>
+        </ul>
+        <img class="navbar_search" src="/icons/search.svg" alt="">
+        <img class="navbar_cart" src="/icons/cart.svg" alt="">
+    </div>
+
+    <!-- Main -->
+    <!-- slideshow -->
+    <div id="o_slideshow">
+        <div id="wrapper">
+            <div id="slider_wrap">
+                <ul id="slider">
+                    <li>
+                        <img src="productImages/dummy-pdt-a.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="productImages/dummy-pdt-b.png" alt="">
+                    </li>
+                    <li>
+                        <img src="productImages/p1.png" alt="">
+                    </li>
+                </ul>
+
+                <!-- controls -->
+                <div class="btns" id="next">
+                    <img src="/icons/rightArrow.svg" alt="">
+                </div>
+                <div class="btns" id="previous">
+                    <img src="/icons/leftArrow.svg" alt="">
+                </div>
+                <!-- !controls -->
+
+            </div>
+            <div id="pagination_wrap">
+                <ul>
+                </ul>
+            </div>
+        </div>
+        <script src="/slideshowMain.js"></script>
+        <!-- !slideshow -->
+    </div>
+    <div id="store_btn_redirect">
+        <span>КЪМ МАГАЗИНА</span>
+        <img src="" alt="">
+    </div>
+
+    <!-- About -->
+    <div id="about_container">
+        <p id="about_container_title">Кои сме ние?</p>
+        <p id="about_container_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio blanditiis doloribus
+            odit recusandae. Voluptate, aliquam. Vitae velit architecto ducimus dolores possimus et adipisci ipsa
+            nesciunt, voluptas vero maiores quidem dolorem!</p>
+    </div>
+    <img id="about_image" src="" alt="">
+
+
+    <!-- Contact -->
+    <div id="contact_container">
+        <div id="contact_info">
+            <div id="contact_telephone">
+                <img id="contact_telephone_icon" src="" alt="">
+                <p id="contact_telephone_title">Телефон:</p>
+                <p id="contact_telephone_content">+359545454</p>
+            </div>
+            <div id="contact_email">
+                <img id="contact_email_icon" src="" alt="">
+                <p id="contact_email_title">E-Mail:</p>
+                <p id="contact_email_content">example@example.com</p>
+            </div>
+            <div id="contact_website">
+                <img id="contact_website_icon" src="" alt="">
+                <p id="contact_website_title">Уебсайт:</p>
+                <p id="contact_website_content">https://www.example.com</p>
+            </div>
+            <div id="contact_address">
+                <img id="contact_address_icon" src="" alt="">
+                <p id="contact_address_title">Адрес:</p>
+                <p id="contact_address_content">ул. "Капитан Андреево"</p>
+            </div>
+        </div>
+        <div>
+            <p>За контакт с нас</p>
+        </div>
+    </div>
+    <div class="footer">
+        <span>Copyright 2021</span>
+    </div>
 </body>
+
 </html>
