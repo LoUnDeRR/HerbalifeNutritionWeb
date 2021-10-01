@@ -25,16 +25,16 @@ function productsConstruction() {
         // PRODUCT IMAGE BACK
         let pImgBack = document.createElement("img");
         if (product.images[1] != null) {
-            pImgBack.src = "images/" + product.images[1];
+            pImgBack.src = "/productImages/" + product.images[1];
         } else {
-            pImgBack.src = "images/" + product.images[0];
+            pImgBack.src = "/productImages/" + product.images[0];
         }
         pImgBack.className = "p_imgBack";
         pImgClickHandlerContainer.appendChild(pImgBack);
 
         // PRODUCT IMAGE FRONT
         let pImgFront = document.createElement("img");
-        pImgFront.src = "images/" + product.images[0];
+        pImgFront.src = "/productImages/" + product.images[0];
         pImgFront.className = "p_imgFront";
         pImgClickHandlerContainer.appendChild(pImgFront);
 
@@ -56,7 +56,7 @@ function productsConstruction() {
 
         // PRODUCT PRICE
         let pPrice = document.createElement("product");
-        pPrice.textContent = product.price + " лв.";
+        pPrice.textContent = product.price.toFixed(2) + " лв.";
         pPrice.className = "p_price";
         pPriceContainer.appendChild(pPrice);
 
@@ -67,7 +67,7 @@ function productsConstruction() {
 
         // PRODUCT ATC ICON
         let pAtcIcon = document.createElement("img");
-        pAtcIcon.src = "images/addToCartIcon.png";
+        pAtcIcon.src = "/icons/addToCartIcon.png";
         pAtcIcon.className = "p_AtcIcon";
         pAtcContainer.appendChild(pAtcIcon);
 
@@ -106,13 +106,13 @@ function cartOverlayConstruction() {
         productsFlex.appendChild(productContainer);
 
         let removeBtn = document.createElement('img');
-        removeBtn.src = "images/removeFromCart.svg";
+        removeBtn.src = "/icons/removeFromCart.svg";
         removeBtn.className = "co_products_remove_icon";
         removeBtn.addEventListener("click", overlay.removeP.bind(this, index));
         productContainer.appendChild(removeBtn);
 
         let productImage = document.createElement('img');
-        productImage.src = "images/" + eachProduct.images[0];
+        productImage.src = "/productImages/" + eachProduct.images[0];
         productImage.className = "co_products_product_image";
         productContainer.appendChild(productImage);
 
@@ -155,7 +155,7 @@ function cartOverlayConstruction() {
 
         let productIncrease = document.createElement('img');
         productIncrease.className = "co_products_product_increase";
-        productIncrease.src = "images/leftArrow.svg";
+        productIncrease.src = "/icons/leftArrow.svg";
         productIncrease.addEventListener("click", overlay.increasePAmount.bind(this, index));
         productContainer.appendChild(productIncrease);
 
@@ -166,7 +166,7 @@ function cartOverlayConstruction() {
 
         let productDecrease = document.createElement('img');
         productDecrease.className = "co_products_product_decrease";
-        productDecrease.src = "images/rightArrow.svg";
+        productDecrease.src = "/icons/rightArrow.svg";
         productDecrease.addEventListener("click", overlay.decreasePAmount.bind(this, index));
         productContainer.appendChild(productDecrease);
 

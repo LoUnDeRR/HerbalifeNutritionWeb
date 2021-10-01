@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="bg-bg">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Herbalife - Онлайн магазин</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/store/slideshow.css">
+  <link rel="stylesheet" href="/store/store.css">
+  <script src="/store/overlay.js"></script>
+  <script src="/store/store.js"></script>
+  <script src="/products.js"></script>
+  <script src="/store/dynamicConstructions.js"></script>
+  <script src="/store/misc.js"></script>
+  <script src="/store/pages.js"></script>
+</head>
+
+<body>
+  <!-- alerts -->
+  <div id="alert_flexbox"></div>
+  <!-- !alerts -->
+
+
+  <!-- products -->
+  <div id="cart_products">
+
+    <div id="pages_container"></div>
+  </div>
+  <!-- !products -->
+
+  <!-- cart -->
+  <div id="cart_items"></div>
+  <!-- !cart -->
+
+  <div id="open_cart_button"></div>
+
+
+  <!-- cart overlay -->
+  <div class="overlay o_close_fnc_call" id="open_cart_overlay">
+    <div id="oc_frame">
+      <img src="/icons/closeIcon.svg" alt="" id="oc_close" class="o_close o_close_fnc_call">
+
+      <span id="cart_empty_msg">Количката е празна!</span>
+      <img id="cart_empty_img" src="/siteImages/emptyCart.jpg" alt="">
+
+      <div id="co_products_container">
+        <div id="co_categories">
+          <span id="co_cat_product">ПРОДУКТ</span>
+          <span id="co_cat_amount">БРОЙКА</span>
+          <span id="co_cat_price">ЦЕНА</span>
+        </div>
+        <div id="co_products_in_cart_container">
+          <div id="co_products_flex">
+            <!--? products -->
+          </div>
+        </div>
+        <div id="co_free_delivery">
+          <span>Доставката е безплатна за поръчки над 65 лв.</span>
+        </div>
+        <div id="co_total_container">
+          <div id="co_total_delivery">
+            <span>Доставка: 5,40 лв.</span>
+          </div>
+          <div id="co_total_price">
+            <span id="co_total_price_text"></span>
+          </div>
+        </div>
+      </div>
+      <div id="co_continue_container">
+        <div id="co_continue_img_container">
+          <img src="/icons/continueIcon.svg" alt="">
+        </div>
+        <span>ПРОДЪЛЖИ</span>
+      </div>
+    </div>
+  </div>
+  <!-- !cart overlay -->
+
+  <!-- overlay -->
+  <div class="overlay o_close_fnc_call" id="open_product_overlay">
+    <div id="o_frame">
+      <img src="/icons/closeIcon.svg" alt="" id="o_close" class="o_close_fnc_call">
+
+      <!-- slideshow -->
+      <div id="o_slideshow">
+        <div id="wrapper">
+          <div id="slider_wrap">
+            <ul id="slider">
+            </ul>
+
+            <!-- controls -->
+            <div class="btns" id="next">
+              <img src="/icons/rightArrow.svg" alt="">
+            </div>
+            <div class="btns" id="previous">
+              <img src="/icons/leftArrow.svg" alt="">
+            </div>
+            <!-- !controls -->
+
+          </div>
+          <div id="pagination_wrap">
+            <ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <script src="/store/slideshow.js"></script>
+      <!-- !slideshow -->
+
+      <!-- content -->
+      <div id=o_new>
+        <span>НОВО</span>
+      </div>
+      <article id="o_product_info_container">
+        <h2 id="o_title">Title</h2>
+        <div id="o_divider"></div>
+        <p id="o_description">Description</p>
+        <div id="o_price">
+          <span>00,00 лв.</span>
+        </div>
+      </article>
+      <!-- !content -->
+
+      <div id="o_buy_container">
+        <div id="o_buy_icon_container">
+          <img src="/icons/buyIcon.svg" alt="">
+        </div>
+        <span>КУПИ СЕГА</span>
+      </div>
+      <div id="o_add_to_cart_container">
+        <div id="o_add_to_cart_icon_container">
+          <img src="/icons/addToCartIcon.png" alt="">
+        </div>
+        <span>ДОБАВИ В <br>КОЛИЧКАТА</span>
+      </div>
+    </div>
+  </div>
+  <!-- !overlay -->
+
+  <!-- footer -->
+  <a href="https://icons8.com" target="_blank">Website icons by icons8</a>
+  <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons/" title="Roundicons/">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  <p>If you download our Free images as a Free user, remember that you need to credit the author by including the attribution line “Designed by Freepik”, in a clear and visible way, somewhere on the printed product or the digital image you create, and a link to www.freepik.com placed on the website where you use Freepik images. This link can be added next to the image or, if this is not possible, in the footer of the website. </p>
+  <!-- !footer -->
+</body>
+
+</html>

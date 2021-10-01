@@ -9,7 +9,7 @@ var overlay = {
         let description = document.getElementById("o_description")
         description.innerHTML = product.description;
         let price = document.getElementById("o_price")
-        price.children[0].innerHTML = product.price + " лв.";
+        price.children[0].innerHTML = product.price.toFixed(2) + " лв.";
         if (products[cart.activeId].new === false) {
             document.getElementById('o_new').style.display = "none";
         } else {
@@ -22,7 +22,7 @@ var overlay = {
             document.getElementById('slider').appendChild(liImg);
 
             let slideshowImage = document.createElement("img")
-            slideshowImage.src = 'images/' + product.images[index];
+            slideshowImage.src = '/productImages/' + product.images[index];
             liImg.appendChild(slideshowImage);
         }
 
@@ -130,7 +130,7 @@ var overlay = {
     checkout: function () {
         let continueBtn = document.getElementById("co_continue_container");
         continueBtn.addEventListener("click", function () {
-            window.location.href = 'checkout.html';
+            window.location.href = '/checkouts/checkout.html';
         });
     }
 
