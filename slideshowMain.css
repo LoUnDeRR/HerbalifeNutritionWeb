@@ -1,11 +1,10 @@
 :root {
-	--slideshowSize: 535px;
-	--btnSize: 55px;
+	--btnSize: 80px;
 }
 
 #wrapper {
-	width: var(--slideshowSize);
-	height: var(--slideshowSize);
+	width: auto;
+	height: 100vh;
 	position: relative;
 	user-select: none;
 }
@@ -15,8 +14,6 @@
 	height: 100%;
 	position: relative;
 	overflow: hidden;
-	border: 5px solid #476080;
-	border-radius: 8px;
 }
 
 #slider_wrap #slider {
@@ -30,14 +27,18 @@
 #slider_wrap #slider li {
 	float: left;
 	position: relative;
-	width: var(--slideshowSize);
-	height: var(--slideshowSize);
+	width: 100vw;
+	height: 100vh;
 }
 
 #slider_wrap #slider img {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+}
+
+#first_slide_item img {
+	object-position: 90% 100%;
 }
 
 .btns {
@@ -70,15 +71,15 @@
 }
 
 #next {
-	right: 5px;
+	right: 15px;
 }
 
 #previous {
-	left: 5px;
+	left: 15px;
 }
 
 #pagination_wrap {
-	margin-top: 10px;
+	margin-top: -40px;
 	min-width: 20px;
 	margin-left: auto;
 	margin-right: auto;
@@ -94,17 +95,16 @@
 
 #pagination_wrap ul li {
 	vertical-align: middle;
-	margin: 0 8px;
+	margin: 0 20px;
 	display: inline-block;
-	width: 17px;
-	height: 17px;
-	border-radius: 50%;
-	border: 4px solid #476080;
+	width: 75px;
+	height: 6px;
+	background-color: #cdcdcd;
 	position: relative;
 }
 
 #pagination_wrap ul li.active {
-	background-color: #476080;
+	background-color: #0075FF;
 }
 
 /*? ANIMATION */

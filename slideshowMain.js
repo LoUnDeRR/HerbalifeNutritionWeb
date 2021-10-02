@@ -27,11 +27,11 @@ var slideshow = {
 		});
 
 		//? For each slide 
-		document.querySelectorAll("#slider_wrap ul li").forEach(element => {
+		for (let i = 0; i < document.querySelectorAll("#slider_wrap ul li").length; i++) {
 			//? Create a pagination
 			var li = document.createElement('li');
 			document.querySelector('#pagination_wrap ul').appendChild(li);
-		})
+		}
 
 		//? Initialize first pagination
 		slideshow.pagination();
@@ -68,7 +68,7 @@ var slideshow = {
 	// 	document.querySelector('#pagination_wrap ul').innerHTML = "";
 	// 	document.querySelector('#slider').innerHTML = "";
 	// }
-}; 
+};
 window.addEventListener('DOMContentLoaded', slideshow.buildSlider);
 
-let autoSlider = setInterval(slideshow.slideRight, 400);
+let autoSlider = setInterval(slideshow.slideRight, 3000);
