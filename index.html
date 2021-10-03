@@ -14,10 +14,10 @@
     <div class="navbar">
         <img class="navbar_logo" src="/siteImages/logoHLWhite.png" alt="">
         <ul class="navbar_nav">
-            <li class="navbar_nav_active">НАЧАЛО</li>
-            <li>МАГАЗИН</li>
-            <li>ЗА НАС</li>
-            <li>ЗА КОНТАКТ</li>
+            <li class="navbar_nav_active"><a href="#">НАЧАЛО</a></li>
+            <li><a href="#">МАГАЗИН</a></li>
+            <li><a href="#store_btn_redirect">ЗА НАС</a></li>
+            <li><a href="#contact_container">ЗА КОНТАКТ</a></li>
         </ul>
         <img class="navbar_search" src="/icons/search.svg" alt="">
         <img class="navbar_cart" src="/icons/cart.svg" alt="">
@@ -86,34 +86,35 @@
 
     <!-- Contact -->
     <div id="contact_container">
+        <img id="contact_background" src="siteImages/contactBG.jpg" alt="">
         <div id="contact_info">
             <div id="contact_telephone">
-                <img id="contact_telephone_icon" src="" alt="">
+                <img id="contact_telephone_icon" src="icons/phoneIcon.png" alt="">
                 <p id="contact_telephone_title">Телефон:</p>
-                <p id="contact_telephone_content">+359545454</p>
+                <span id="contact_telephone_content">+359 876 845 304</span>
             </div>
             <div id="contact_email">
-                <img id="contact_email_icon" src="" alt="">
+                <img id="contact_email_icon" src="icons/emailIcon.png" alt="">
                 <p id="contact_email_title">E-Mail:</p>
-                <p id="contact_email_content">example@example.com</p>
+                <span id="contact_email_content">example@example.com</span>
             </div>
             <div id="contact_website">
-                <img id="contact_website_icon" src="" alt="">
+                <img id="contact_website_icon" src="icons/globeIcon.png" alt="">
                 <p id="contact_website_title">Уебсайт:</p>
-                <p id="contact_website_content">https://www.example.com</p>
+                <span id="contact_website_content">https://www.herbalife.com</span>
             </div>
             <div id="contact_address">
-                <img id="contact_address_icon" src="" alt="">
+                <img id="contact_address_icon" src="icons/mapIcon.png" alt="">
                 <p id="contact_address_title">Адрес:</p>
-                <p id="contact_address_content">ул. "Капитан Андреево"</p>
+                <span id="contact_address_content">ул. „Капитан Николов“ №2 4000 Пловдив</span>
             </div>
         </div>
-        <div>
+        <div id="contact_title_container">
             <p>За контакт с нас</p>
         </div>
     </div>
-    <div class="footer">
-        <span>Copyright 2021</span>
+    <div id="footer">
+        <span>© Copyright 2021 by Herbalife. All Rights Reserved.</span>
     </div>
 </body>
 
