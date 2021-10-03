@@ -74,38 +74,7 @@
     left: 0;
 }
 
-#quote_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    width: 100%;
-    height: 215px;
-    background-color: rgba(0, 0, 0, 0.56);
-}
-
-#quote_container span {
-    font-weight: 800;
-    font-style: italic;
-    color: #dddddd;
-}
-
-#quote {
-    position: absolute;
-    margin-right: 50px;
-    margin-bottom: 40px;
-    font-size: 35px;
-    font-size: 35px;
-}
-
-#quote_author {
-    position: absolute;
-    font-size: 27px;
-    margin-top: 150px;
-    margin-left: 150px;
-}
+/* Store Btn */
 
 #store_btn_redirect {
     position: absolute;
@@ -131,4 +100,48 @@
 
 #store_btn_redirect img {
     margin-left: 15px;
+}
+
+#store_btn_redirect:hover {
+    background-color: #77c447;
+}
+
+/* About */
+
+#about_container {
+    float: left;
+    position: relative;
+    margin-top: -145px;
+    width: 50%;
+    height: 76vh;
+    background-color: #476080;
+}
+
+#about_image {
+    margin-top: -145px;
+    float: right;
+    width: 50%;
+    height: 76vh;
+    object-fit: cover;
+}
+
+#about_container_title {
+    position: absolute;
+    left: 12%;
+    top: 10%;
+    color: #FFFFFF;
+    font-size: 55px;
+    font-weight: 700;
+}
+
+#about_container_text {
+    position: absolute;
+    left: 12%;
+    top: 25%;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.7;
+    width: 760px;
+    height: 300px;
 }
