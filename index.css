@@ -135,7 +135,7 @@
     left: 12%;
     top: 10%;
     color: #FFFFFF;
-    font-size: 55px;
+    font-size: 3vw;
     font-weight: 700;
 }
 
@@ -144,10 +144,10 @@
     left: 12%;
     top: 25%;
     color: #FFFFFF;
-    font-size: 30px;
+    font-size: 1.6vw;
     font-weight: 500;
     line-height: 1.7;
-    width: 760px;
+    width: 40vw;
     height: 300px;
 }
 
@@ -235,8 +235,110 @@
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
+    text-align: center;
 }
 
 #footer span {
     font-weight: 500;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1445px) {
+    #contact_info {
+        width: 650px;
+        height: 350px;
+    }
+    #contact_info span {
+        font-size: 21px;
+    }
+    #contact_info p {
+        font-size: 21px;
+    }
+    #contact_title_container {
+        width: 550px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #contact_title_container {
+        display: none;
+    }
+    #store_btn_redirect {
+        width: 330px;
+        height: 65px;
+    }
+    #store_btn_redirect span {
+        font-size: 26px;
+    }
+    #about_container_title {
+        font-size: 36px;
+    }
+    #about_container_text {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #about_container_title {
+        font-size: 33px;
+    }
+    #about_container_text {
+        font-size: 19px;
+    }
+    #quote_container {
+        height: 180px !important;
+    }
+    #quote_container #quote {
+        font-size: 28px;
+    }
+    #quote_container #quote_author {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 1300px) {}
+
+@media screen and (max-width: 760px) {
+    .btns {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    #quote_container {
+        top: 30vh !important;
+    }
+    #contact_info {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #about_image {
+        position: relative;
+        z-index: -1;
+        width: 100%;
+    }
+    #about_container {
+        position: absolute;
+        width: 100%;
+        opacity: 90%;
+    }
+    #about_container_text {
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .contact_icons {
+        opacity: 0;
+    }
+    .contact_info_text {
+        left: 2px !important;
+    }
+    #footer {
+        height: 66px;
+    }
 }
