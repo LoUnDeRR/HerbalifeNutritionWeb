@@ -31,6 +31,14 @@ var cart = {
 
     // CLOSE OVERLAY SETUP
     overlay.closeOverlayInit();
+
+
+    // main page open cart
+    const params = new URLSearchParams(window.location.search);
+    const cartState = params.get("cart");
+    if (cartState == 'open') {
+      overlay.openCart();
+    }
   },
 
   // ADD TO CART
