@@ -17,6 +17,29 @@
 </head>
 
 <body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="/index.html">
+      <img class="navbar_logo" src="/siteImages/logoHLWhite.png" alt="">
+    </a>
+    <ul class="navbar_nav">
+      <a href="/index.html">
+        <li class="navbar_nav_active">НАЧАЛО</li>
+      </a>
+      <a href="/store/store.html">
+        <li>МАГАЗИН</li>
+      </a>
+      <a href="/index.html#store_btn_redirect">
+        <li>ЗА НАС</li>
+      </a>
+      <a href="/index.html#contact_container">
+        <li>ЗА КОНТАКТ</li>
+      </a>
+    </ul>
+    <a href="/store/store.html#NOTIMPLEMENTED"><img class="navbar_search" src="/icons/search.svg" alt=""></a>
+    <a onclick="overlay.openCart();"><img class="navbar_cart" src="/icons/cart.svg" alt=""></a>
+  </div>
+  <!-- !Navbar -->
   <!-- alerts -->
   <div id="alert_flexbox"></div>
   <!-- !alerts -->
@@ -33,7 +56,7 @@
   <div id="cart_items"></div>
   <!-- !cart -->
 
-  <div id="open_cart_button"></div>
+  <!-- <div id="open_cart_button"></div> -->
 
 
   <!-- cart overlay -->
@@ -126,7 +149,9 @@
         <div id="o_buy_icon_container">
           <img src="/icons/buyIcon.svg" alt="">
         </div>
-        <span>КУПИ СЕГА</span>
+        <a href="/checkouts/buyNow.html">
+          <span>КУПИ СЕГА</span>
+        </a>
       </div>
       <div id="o_add_to_cart_container">
         <div id="o_add_to_cart_icon_container">
@@ -140,8 +165,12 @@
 
   <!-- footer -->
   <a href="https://icons8.com" target="_blank">Website icons by icons8</a>
-  <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons/" title="Roundicons/">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-  <p>If you download our Free images as a Free user, remember that you need to credit the author by including the attribution line “Designed by Freepik”, in a clear and visible way, somewhere on the printed product or the digital image you create, and a link to www.freepik.com placed on the website where you use Freepik images. This link can be added next to the image or, if this is not possible, in the footer of the website. </p>
+  <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons/" title="Roundicons/">Roundicons</a> from <a
+      href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  <p>If you download our Free images as a Free user, remember that you need to credit the author by including the
+    attribution line “Designed by Freepik”, in a clear and visible way, somewhere on the printed product or the digital
+    image you create, and a link to www.freepik.com placed on the website where you use Freepik images. This link can be
+    added next to the image or, if this is not possible, in the footer of the website. </p>
   <!-- !footer -->
 </body>
 

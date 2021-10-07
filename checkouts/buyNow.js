@@ -1,18 +1,16 @@
 var buyNow = {
-    price: 0,
-    // cartItems: JSON.parse(localStorage.getItem("cart")),
     init: function () {
-        checkout.price = Number(/*products[index].price*/ null);
+        const params = new URLSearchParams(window.location.search);
+
+        const id = params.get("id");
+        const price = params.get("price");
+        const name = params.get("name");
 
 
-        let itemsString = "";
-        itemsString += `ID: #${/*products[index].id*/ null} | БРОЙ: 1 | ЦЕНА: ${/*products[index].price*/ null} лв. | ИМЕ: ${/*products[index].name*/ null}`
-
-
+        document.getElementById("checkout_product_price").textContent = price;
 
         let buyNowItem = document.getElementById("buy_now_item");
-        buyNowItem.value = itemsString;
-
+        buyNowItem.value = `ID: #${id} | БРОЙ: 1 | ЦЕНА: ${price} | ИМЕ: ${name}\n`;
     }
 };
-window.addEventListener("DOMContentLoaded", checkout.init); //? On load --> checkout.init()
+window.addEventListener("DOMContentLoaded", buyNow.init); //? On load --> checkout.init()

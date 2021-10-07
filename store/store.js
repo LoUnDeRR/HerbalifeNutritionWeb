@@ -21,10 +21,10 @@ var cart = {
     productsConstruction();
     cart.load();
 
-    // CART BUTTON
-    document.getElementById('open_cart_button').addEventListener("click", function () {
-      overlay.openCart();
-    });
+    // // CART BUTTON
+    // document.getElementById('open_cart_button').addEventListener("click", function () {
+    //   overlay.openCart();
+    // });
 
     // CHECKOUT SETUP
     overlay.checkout();
@@ -53,7 +53,8 @@ var cart = {
   },
 
   buy: function () {
-    alert(`Not implemented! (buyOverlayClick) index [${cart.activeId}] #${products[cart.activeId].id}`);
+    window.location.href = '/checkouts/buyNow.html?id=' + products[cart.activeId].id + '&price=' + products[cart.activeId].price + '&name=' + products[cart.activeId].name;
+
   }
 };
 window.addEventListener("DOMContentLoaded", cart.init); //? On load --> cart.init()

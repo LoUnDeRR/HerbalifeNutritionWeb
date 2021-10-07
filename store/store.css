@@ -12,6 +12,9 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-language-override: "ENG";
+  text-decoration: none;
+  color: inherit;
+  scroll-behavior: smooth;
 }
 
 /* !GLOBAL */
@@ -262,6 +265,7 @@ button.cart {
 
 .overlay {
   position: fixed;
+  z-index: 120;
   top: 0;
   left: 0;
   width: 100%;
@@ -942,4 +946,60 @@ button.cart {
 
 .page_btn_active {
   background-color: purple;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 99;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 145px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) -3.79%, rgba(0, 0, 0, 0) 100%);
+}
+
+.navbar_logo {
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  height: 58px;
+  cursor: pointer;
+}
+
+.navbar ul {
+  margin-top: -25px;
+  color: #FFFFFF;
+  font-size: 21px;
+  list-style: none;
+  display: inline-flex;
+}
+
+.navbar ul li {
+  padding: 15px;
+  cursor: pointer;
+}
+
+.navbar ul li:hover {
+  color: #8EE158;
+}
+
+.navbar_search {
+  position: absolute;
+  right: 240px;
+  top: 43px;
+  width: 37px;
+  height: 37px;
+  cursor: pointer;
+}
+
+.navbar_cart {
+  position: absolute;
+  right: 150px;
+  top: 41px;
+  width: 39px;
+  height: 39px;
+  cursor: pointer;
 }
