@@ -53,8 +53,9 @@ var cart = {
   },
 
   buy: function () {
-    window.location.href = '/checkouts/buyNow.html?id=' + products[cart.activeId].id + '&price=' + products[cart.activeId].price + '&name=' + products[cart.activeId].name;
+    let redirectURL = '/checkouts/buyNow.html?id=' + products[cart.activeId].id + '&price=' + products[cart.activeId].price + '&name=' + products[cart.activeId].name;
 
+    window.location.href = redirectURL;
   }
 };
 window.addEventListener("DOMContentLoaded", cart.init); //? On load --> cart.init()
