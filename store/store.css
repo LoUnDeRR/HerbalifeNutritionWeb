@@ -22,7 +22,8 @@
 /* PAGE DESIGN */
 
 body {
-  background: #C4C4C4;
+  background-image: url("/siteImages/dotGridBG.png");
+  background-repeat: repeat;
   overflow-x: hidden;
 }
 
@@ -90,7 +91,7 @@ button.cart {
   display: grid;
   grid-template-columns: repeat(auto-fill, 295px);
   justify-content: center;
-  background-color: gray;
+  background-color: #DADADA;
 }
 
 /* $$ STORE > PRODUCTS */
