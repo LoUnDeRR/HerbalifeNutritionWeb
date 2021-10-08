@@ -14,29 +14,82 @@
 </head>
 
 <body>
-    <span>Total Price: </span><span id=checkout_total_price></span><span> лв.</span>
+    <!-- <span>Total Price: </span><span id=checkout_total_price></span><span> лв.</span>
     <ul id=checkoutItems>
 
-    </ul>
+    </ul> -->
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/index.html">
+            <img class="navbar_logo" src="/siteImages/logoHLWhite.png" alt="">
+        </a>
+        <ul class="navbar_nav">
+            <a href="/index.html">
+                <li class="navbar_nav_active">НАЧАЛО</li>
+            </a>
+            <a href="/store/store.html">
+                <li>МАГАЗИН</li>
+            </a>
+            <a href="/index.html#store_btn_redirect">
+                <li>ЗА НАС</li>
+            </a>
+            <a href="/index.html#contact_container">
+                <li>ЗА КОНТАКТ</li>
+            </a>
+        </ul>
+        <!-- <a href="/store/store.html#NOTIMPLEMENTED"><img class="navbar_search" src="/icons/search.svg" alt=""></a> -->
+        <a href="/store/store.html?cart=open"><img class="navbar_cart" src="/icons/cart.svg" alt=""></a>
+    </div>
+    <!-- !Navbar -->
 
-    <hr>
+    <div id="form_content_container">
+        <div id="form_title">
+            <span>ЗАВЪРШВАНЕ НА ПОРЪЧКАТА</span>
+        </div>
+        <form method="post" action="https://api.formcake.com/api/form/9fcd2568-b7eb-44a8-91bc-32f8ba5a9186/submission">
+            <label for="name">ИМЕ</label>
+            <input name="name" type="text" placeholder="Име"><br>
 
-    <form method="post" action="https://api.formcake.com/api/form/9fcd2568-b7eb-44a8-91bc-32f8ba5a9186/submission">
-        <label for="name">Име</label>
-        <input name="name" type="text" placeholder="Име"><br>
+            <label for="surname">ФАМИЛИЯ</label>
+            <input name="surname" type="text" placeholder="Фамилия"><br>
 
-        <label for="telephone">Телефон</label>
-        <input name="telephone" type="text" placeholder="Тел. номер"><br>
+            <label for="email">ИМЕЙЛ</label>
+            <input name="email" type="email" placeholder="Имейл" value=""><br>
 
-        <label for="email">Email</label>
-        <input name="email" type="email" placeholder="example@example.com" value=""><br>
+            <label for="telephone">ТЕЛЕФОН</label>
+            <input name="telephone" type="text" placeholder="Телефон"><br>
 
-        <input id="checkoutInputItems" type="hidden" name="items" value="" />
 
-        <button type="submit">Изпрати Имейл</button>
-    </form>
+            <input id="checkoutInputItems" type="hidden" name="items" value="" />
 
-    <hr>
+            <div id="total">
+                <span>Дължима сума: </span><span id=checkout_total_price></span><span> лв.</span>
+            </div>
+
+            <div id="buy_container" onclick="this.parentNode.submit()">
+                <div id="buy_icon_container">
+                    <img src="/icons/buyIcon.svg" alt="">
+                </div>
+                <span>ПОРЪЧАЙ</span>
+            </div>
+        </form>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- <script src="https://js.stripe.com/v3/"></script>
 
     <form action="//httpbin.org/post" method="POST">

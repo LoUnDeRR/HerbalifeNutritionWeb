@@ -19,6 +19,7 @@ function productsConstruction() {
             cart.activeId = id;
             overlay.openProduct();
         });
+        // pClickHandler.href = '#';
         pClickHandler.className = "p_clickHandler";
         pImgClickHandlerContainer.appendChild(pClickHandler);
 
@@ -184,6 +185,6 @@ function cartOverlayConstruction() {
         overlay.totalSum += cart.items[index] * eachProduct.price;
         productPriceBox.appendChild(productPrice);
     }
-    document.getElementById("co_total_price_text").textContent = overlay.totalSum.toFixed(2) + " лв.";
+    document.getElementById("co_total_price_text").textContent = "Общо: " + overlay.totalSum.toFixed(2) + " лв.";
 
 }

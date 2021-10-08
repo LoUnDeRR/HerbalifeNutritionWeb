@@ -81,7 +81,7 @@ var overlay = {
         document.getElementsByClassName("co_products_product_price p" + index)[0].textContent = (products[index].price * cart.items[index]).toFixed(2) + " лв.";
 
         overlay.totalSum += products[index].price;
-        document.getElementById("co_total_price_text").textContent = overlay.totalSum.toFixed(2) + " лв.";
+        document.getElementById("co_total_price_text").textContent = "Общо: " + overlay.totalSum.toFixed(2) + " лв.";
 
         cart.save();
     },
@@ -93,7 +93,7 @@ var overlay = {
             document.getElementsByClassName("co_products_product_price p" + index)[0].textContent = (products[index].price * cart.items[index]).toFixed(2) + " лв.";
 
             overlay.totalSum -= products[index].price;
-            document.getElementById("co_total_price_text").textContent = overlay.totalSum.toFixed(2) + " лв.";
+            document.getElementById("co_total_price_text").textContent = "Общо: " + overlay.totalSum.toFixed(2) + " лв.";
 
             cart.save();
 
@@ -104,7 +104,7 @@ var overlay = {
     removeP: function (index) {
         let productMainContainer = document.getElementsByClassName("co_product_container p" + index)[0];
         overlay.totalSum -= products[index].price * cart.items[index];
-        document.getElementById("co_total_price_text").textContent = overlay.totalSum.toFixed(2) + " лв.";
+        document.getElementById("co_total_price_text").textContent = "Общо: " + overlay.totalSum.toFixed(2) + " лв.";
         productMainContainer.parentNode.removeChild(productMainContainer);
         delete cart.items[index];
         cart.save();

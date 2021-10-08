@@ -262,6 +262,10 @@
 }
 
 @media screen and (max-width: 1200px) {
+    #contact_info {
+        background-color: rgba(255, 255, 255, 0.9);
+
+    }
     #contact_title_container {
         display: none;
     }
