@@ -232,7 +232,7 @@ body {
   .mobile_nav {
       display: block;
       position: fixed;
-      top: -2px;
+      top: 0px;
       left: 0;
       z-index: 99;
       width: 100%;

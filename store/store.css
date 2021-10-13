@@ -1064,7 +1064,7 @@ button.cart {
   .mobile_nav {
       display: block;
       position: fixed;
-      top: -2px;
+      top: 0px;
       left: 0;
       z-index: 99;
       width: 100%;
@@ -1142,3 +1142,26 @@ button.cart {
     height: auto;
   }
 }
+
+
+#footer {
+  float: left;
+  height: 33px;
+  width: 100%;
+  background-color: #58A0FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+#footer span {
+  font-weight: 500;
+}
+@media screen and (max-width: 400px) {
+  #footer {
+      height: 66px;
+  }
+}
+
