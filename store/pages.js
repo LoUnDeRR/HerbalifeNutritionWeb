@@ -45,7 +45,8 @@ var pages = {
                 var current = document.getElementsByClassName("page_btn_active");
                 current[0].className = current[0].className.replace(" page_btn_active", "");
                 this.className += " page_btn_active";
-                window.location = '#';
+                setTimeout(() => { document.body.scrollTop = document.documentElement.scrollTop = 0; }, 100);
+
             });
 
             btn.addEventListener("click", function () {
