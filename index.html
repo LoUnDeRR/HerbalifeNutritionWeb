@@ -7,16 +7,40 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="slideshowMain.css">
+    <script src="/responsiveMenu.js"></script>
 </head>
 
 <body>
     <!-- Navbar -->
+    <div class="mobile_nav">
+        <div class="mobile_nav_top">
+            <img class="mobile_nav_menu" src="/icons/menu.svg" alt="">
+            <a href="/index.html#">
+                <img class="mobile_nav_logo" src="/siteImages/logoHLWhite.png" alt="">
+            </a>
+            <a href="/store/store.html?cart=open"><img class="mobile_nav_cart" src="/icons/cart.svg" alt=""></a>
+        </div>
+        <ul class="mobile_nav_items">
+            <a href="/index.html#" onclick="CloseMenu();">
+                <li class="navbar_nav_active">НАЧАЛО</li>
+            </a>
+            <a href="/store/store.html" onclick="CloseMenu();">
+                <li>МАГАЗИН</li>
+            </a>
+            <a href="/index.html#store_btn_redirect" onclick="CloseMenu();">
+                <li>ЗА НАС</li>
+            </a>
+            <a href="/index.html#contact_container" onclick="CloseMenu();">
+                <li>ЗА КОНТАКТ</li>
+            </a>
+        </ul>
+    </div>
     <div class="navbar">
-        <a href="/index.html">
+        <a href="/index.html#">
             <img class="navbar_logo" src="/siteImages/logoHLWhite.png" alt="">
         </a>
         <ul class="navbar_nav">
-            <a href="/index.html">
+            <a href="/index.html#">
                 <li class="navbar_nav_active">НАЧАЛО</li>
             </a>
             <a href="/store/store.html">
@@ -31,6 +55,7 @@
         </ul>
         <!-- <a href="/store/store.html#NOTIMPLEMENTED"><img class="navbar_search" src="/icons/search.svg" alt=""></a> -->
         <a href="/store/store.html?cart=open"><img class="navbar_cart" src="/icons/cart.svg" alt=""></a>
+        <!-- <img class="navbar_menu" src="/icons/menu.svg" alt=""> -->
     </div>
 
     <!-- Main -->

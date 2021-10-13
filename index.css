@@ -264,7 +264,6 @@
 @media screen and (max-width: 1200px) {
     #contact_info {
         background-color: rgba(255, 255, 255, 0.9);
-
     }
     #contact_title_container {
         display: none;
@@ -303,7 +302,80 @@
     }
 }
 
-@media screen and (max-width: 1300px) {}
+/* mobile navbar */
+
+.mobile_nav, .navbar_menu, .mobile_nav_items {
+    display: none;
+}
+
+@media screen and (max-width: 1250px) {
+    .navbar {
+        display: none;
+    }
+    .mobile_nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    .mobile_nav_top {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 9vh;
+        background-color: #333333;
+        padding: 0 4vw 0 4vw;
+        pointer-events: auto;
+    }
+    .mobile_nav_menu {
+        width: 10vw;
+        height: 10vw;
+        max-height: 6vh;
+        cursor: pointer;
+    }
+    .mobile_nav_logo {
+        max-height: 6vh;
+        max-width: 30vh;
+        width: 50vw;
+        cursor: pointer;
+    }
+    .mobile_nav_cart {
+        width: 10vw;
+        height: 10vw;
+        max-height: 6vh;
+        cursor: pointer;
+    }
+}
+
+.mobile_nav_items {
+    width: 100%;
+    height: 91vh;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    pointer-events: auto;
+
+}
+
+.mobile_nav_items li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    font-size: 3vh;
+    height: 10vh;
+}
+
+.mobile_nav_items li:hover {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
+}
 
 @media screen and (max-width: 760px) {
     .btns {
@@ -332,7 +404,6 @@
     #about_container_text {
         width: 80%;
     }
-
 }
 
 @media screen and (max-width: 400px) {
@@ -344,5 +415,8 @@
     }
     #footer {
         height: 66px;
+    }
+    #quote, #quote_author {
+        font-size: 6vw !important;
     }
 }
