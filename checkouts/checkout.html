@@ -11,6 +11,7 @@
     <script src="/checkouts/checkout.js"></script>
     <script src="/products.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="/responsiveMenu.js"></script>
 </head>
 
 <body>
@@ -19,12 +20,35 @@
 
     </ul> -->
     <!-- Navbar -->
+    <div class="mobile_nav">
+        <div class="mobile_nav_top">
+            <img class="mobile_nav_menu" src="/icons/menu.svg" alt="">
+            <a href="/index.html#">
+                <img class="mobile_nav_logo" src="/siteImages/logoHLWhite.png" alt="">
+            </a>
+            <a href="/store/store.html?cart=open"><img class="mobile_nav_cart" src="/icons/cart.svg" alt=""></a>
+        </div>
+        <ul class="mobile_nav_items">
+            <a href="/index.html#" onclick="CloseMenu();">
+                <li class="navbar_nav_active">НАЧАЛО</li>
+            </a>
+            <a href="/store/store.html" onclick="CloseMenu();">
+                <li>МАГАЗИН</li>
+            </a>
+            <a href="/index.html#store_btn_redirect" onclick="CloseMenu();">
+                <li>ЗА НАС</li>
+            </a>
+            <a href="/index.html#contact_container" onclick="CloseMenu();">
+                <li>ЗА КОНТАКТ</li>
+            </a>
+        </ul>
+    </div>
     <div class="navbar">
-        <a href="/index.html">
+        <a href="/index.html#">
             <img class="navbar_logo" src="/siteImages/logoHLWhite.png" alt="">
         </a>
         <ul class="navbar_nav">
-            <a href="/index.html">
+            <a href="/index.html#">
                 <li class="navbar_nav_active">НАЧАЛО</li>
             </a>
             <a href="/store/store.html">
@@ -39,7 +63,9 @@
         </ul>
         <!-- <a href="/store/store.html#NOTIMPLEMENTED"><img class="navbar_search" src="/icons/search.svg" alt=""></a> -->
         <a href="/store/store.html?cart=open"><img class="navbar_cart" src="/icons/cart.svg" alt=""></a>
+        <!-- <img class="navbar_menu" src="/icons/menu.svg" alt=""> -->
     </div>
+
     <!-- !Navbar -->
 
     <div id="form_content_container">
@@ -48,25 +74,25 @@
         </div>
         <form method="post" action="https://api.formcake.com/api/form/9fcd2568-b7eb-44a8-91bc-32f8ba5a9186/submission">
             <label for="name">ИМЕ</label>
-            <input name="name" type="text" placeholder="Име"><br>
+            <input class="inputField" name="name" type="text" placeholder="Име"><br>
 
             <label for="surname">ФАМИЛИЯ</label>
-            <input name="surname" type="text" placeholder="Фамилия"><br>
+            <input class="inputField" name="surname" type="text" placeholder="Фамилия"><br>
 
             <label for="email">ИМЕЙЛ</label>
-            <input name="email" type="email" placeholder="Имейл" value=""><br>
+            <input class="inputField" name="email" type="email" placeholder="Имейл" value=""><br>
 
             <label for="telephone">ТЕЛЕФОН</label>
-            <input name="telephone" type="text" placeholder="Телефон"><br>
+            <input class="inputField" name="telephone" type="text" placeholder="Телефон"><br>
 
 
-            <input id="checkoutInputItems" type="hidden" name="items" value="" />
+            <input class="inputField" id="checkoutInputItems" type="hidden" name="items" value="" />
 
             <div id="total">
                 <span>Дължима сума: </span><span id=checkout_total_price></span><span> лв.</span>
             </div>
 
-            <div id="buy_container" onclick="this.parentNode.submit()">
+            <div id="buy_container" onclick="checkout.submit();">
                 <div id="buy_icon_container">
                     <img src="/icons/buyIcon.svg" alt="">
                 </div>

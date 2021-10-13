@@ -7,14 +7,15 @@
     <title>Document</title>
 
 
-    <link rel="stylesheet" href="/checkouts/buyNow.css">
+    <link rel="stylesheet" href="/checkouts/thankyou.css">
     <script src="/responsiveMenu.js"></script>
-    <script src="/checkouts/buyNow.js"></script>
-    <script src="/products.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body>
+    <!-- <span>Total Price: </span><span id=checkout_total_price></span><span> лв.</span>
+    <ul id=checkoutItems>
+
+    </ul> -->
     <!-- Navbar -->
     <div class="mobile_nav">
         <div class="mobile_nav_top">
@@ -62,39 +63,11 @@
         <!-- <img class="navbar_menu" src="/icons/menu.svg" alt=""> -->
     </div>
 
-    <div id="form_content_container">
-        <div id="form_title">
-            <span>ЗАВЪРШВАНЕ НА ПОРЪЧКАТА</span>
-        </div>
-        <form method="post" action="https://api.formcake.com/api/form/9fcd2568-b7eb-44a8-91bc-32f8ba5a9186/submission">
-            <label for="name">ИМЕ</label>
-            <input class="inputField" name="name" type="text" placeholder="Име"><br>
+    <!-- !Navbar -->
 
-            <label for="surname">ФАМИЛИЯ</label>
-            <input class="inputField" name="surname" type="text" placeholder="Фамилия"><br>
-
-            <label for="email">ИМЕЙЛ</label>
-            <input class="inputField" name="email" type="email" placeholder="Имейл" value=""><br>
-
-            <label for="telephone">ТЕЛЕФОН</label>
-            <input class="inputField" name="telephone" type="text" placeholder="Телефон"><br>
-
-            <input class="inputField" id="buy_now_item" type="hidden" name="items" value="" />
-            <div id="total">
-                <span>Дължима сума: </span><span id=checkout_product_price></span><span> лв.</span>
-            </div>
-
-            <div id="buy_container" onclick="buyNow.submit();">
-                <div id="buy_icon_container">
-                    <img src="/icons/buyIcon.svg" alt="">
-                </div>
-                <span>ПОРЪЧАЙ</span><span id=checkout_product_price></span>
-            </div>
-        </form>
-
-
+    <div id="sent_message">
+        <span>Благодарим Ви!</span>
+        <span>Заявката за поръчка е изпратена!</span>
     </div>
-
 </body>
-
 </html>

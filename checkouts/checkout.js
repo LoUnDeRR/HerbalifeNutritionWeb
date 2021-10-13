@@ -5,12 +5,12 @@ var checkout = {
         //? Count total
         let itemsString = "";
         for (const index of Object.keys(checkout.cartItems)) {
-          console.log(`[${index}]` + checkout.cartItems[index] + " * " + products[index].price)
-          checkout.total += Number(checkout.cartItems[index] * products[index].price);
-          itemsString += `ID: #${products[index].id} | БРОЙ: ${checkout.cartItems[index]} | ЦЕНА: ${products[index].price} лв. | ИМЕ: ${products[index].name} \n`
+            console.log(`[${index}]` + checkout.cartItems[index] + " * " + products[index].price)
+            checkout.total += Number(checkout.cartItems[index] * products[index].price);
+            itemsString += `ID: #${products[index].id} | БРОЙ: ${checkout.cartItems[index]} | ЦЕНА: ${products[index].price} лв. | ИМЕ: ${products[index].name} \n`
 
         }
-        
+
         let inputItems = document.getElementById("checkoutInputItems");
         inputItems.value = itemsString;
 
@@ -25,6 +25,20 @@ var checkout = {
             itemsList.appendChild(listElement);
         }
         //
+    },
+
+    submit: function () {
+        let buyBtn = document.getElementById("buy_container");
+        let fields = document.getElementsByClassName("inputField");
+        for (let index = 0; index < fields.length; index++) {
+            console.log();
+            if (fields[index].value == "" || fields[index].value == null) {
+                alert("Количката е празна или не са попълнени текстовите полета!")
+                return 0;
+            }
+        }
+        buyBtn.parentNode.submit()
+
     }
 };
 window.addEventListener("DOMContentLoaded", checkout.init); //? On load --> checkout.init()
