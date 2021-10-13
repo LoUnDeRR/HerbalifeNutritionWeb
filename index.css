@@ -315,7 +315,7 @@
     .mobile_nav {
         display: block;
         position: fixed;
-        top: 0;
+        top: -2px;
         left: 0;
         z-index: 99;
         width: 100%;

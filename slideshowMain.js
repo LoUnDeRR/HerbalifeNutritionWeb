@@ -59,6 +59,12 @@ var slideshow = {
 		})
 		//? Add class active to the page that's at 'pos'
 		document.querySelector("#pagination_wrap ul").children[slideshow.pos].classList.add('active');
+	},
+
+	resize: function () {
+		slideshow.sliderWidth = document.querySelector('#slider_wrap img').width;
+		document.querySelector('#slider_wrap #slider').style.width = `${slideshow.sliderWidth * slideshow.totalSlides}px`;
+
 	}
 
 	// destroySlideshow: function () {
@@ -70,5 +76,7 @@ var slideshow = {
 	// }
 };
 window.addEventListener('DOMContentLoaded', slideshow.buildSlider);
+
+
 
 let autoSlider = setInterval(slideshow.slideRight, 3000);
