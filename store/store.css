@@ -490,6 +490,101 @@ button.cart {
   font-size: 22px;
 }
 
+@media screen and (max-width: 1550px), screen and (max-height: 810px) {
+  #o_frame {
+    width: 160vh;
+    height: 90vh;
+    border-radius: 4vh;
+  }
+  #o_slideshow {
+    left: 9vh;
+    top: 9vh;
+  }
+  #o_close {
+    top: -2vh;
+    right: -2vh;
+    width: 7vh;
+    height: 7vh;
+
+  }
+  #o_new {
+    top: 5vh;
+    left: 63vh;
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+    font-size: 2.5vh;
+  }
+  #o_product_info_container {
+    top: 9vh;
+    right: 6vh;
+    width: 75vh;
+    height: 50vh;
+    padding: 3vh 4vh 3vh 4vh;
+  }
+  #o_title {
+    font-size: 3vh;
+  }
+  #o_divider {
+    width: 60vh;
+    height: 0.7vh;
+    top: 2vh;
+  }
+  #o_description {
+    padding-right: 5vh;
+    margin-top: 4vh;
+    font-size: 2.5vh;
+  }
+  #o_price {
+    bottom: -3.5vh;
+    right: 3vh;
+    height: 7vh;
+    width: 19vh;
+    line-height: 7vh;
+  }
+  #o_price span {
+    font-size: 4vh;
+  }
+  #o_buy_container {
+    bottom: 12vh;
+    right: 42vh;
+    height: 11.5vh;
+    width: 32vh;
+  }
+  #o_buy_icon_container {
+    height: 11.5vh;
+    width: 11.5vh;
+  }
+  #o_buy_icon_container img {
+    width: 8vh;
+    height: 8vh;
+  }
+  #o_buy_container span {
+    right: 4vh;
+    font-size: 2.5vh;
+    line-height: 11.5vh;
+  }
+  #o_add_to_cart_container {
+    bottom: 12vh;
+    right: 8vh;
+    height: 11.5vh;
+    width: 32vh;
+  }
+  #o_add_to_cart_icon_container {
+    height: 11.5vh;
+    width: 11.5vh;
+  }
+  #o_add_to_cart_icon_container img {
+    width: 8vh;
+    height: 8vh;
+  }
+  #o_add_to_cart_container span {
+    right: 3vh;
+    font-size: 2.5vh;
+    line-height: 4vh;
+  }
+}
+
 /* !PRODUCT OVERLAY */
 
 /* $$ ALERTS */
@@ -497,7 +592,7 @@ button.cart {
 #alert_flexbox {
   z-index: 1000;
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   width: 380px;
   bottom: 50px;
   height: 200%;
@@ -505,6 +600,16 @@ button.cart {
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: wrap;
+}
+
+@media screen and (max-width: 400px) {
+  #alert_flexbox {
+    width: 300px;
+    right: 0px;
+  }
+  .alertATC {
+    border-radius: 0 0 5px 5px;
+  }
 }
 
 .alertATC {
@@ -1040,13 +1145,14 @@ button.cart {
   cursor: pointer;
 }
 
-
 /* navbar */
+
 .mobile_nav {
   display: none;
 }
 
 /* menu icon */
+
 .navbar_menu {
   display: none;
 }
@@ -1059,45 +1165,45 @@ button.cart {
 
 @media screen and (max-width: 1250px) {
   .navbar {
-      display: none;
+    display: none;
   }
   .mobile_nav {
-      display: block;
-      position: fixed;
-      top: 0px;
-      left: 0;
-      z-index: 99;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
   }
   .mobile_nav_top {
-      display: inline-flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      height: 9vh;
-      background-color: #333333;
-      padding: 0 4vw 0 4vw;
-      pointer-events: auto;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 9vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 0 4vw 0 4vw;
+    pointer-events: auto;
   }
   .mobile_nav_menu {
-      width: 10vw;
-      height: 10vw;
-      max-height: 6vh;
-      cursor: pointer;
+    width: 10vw;
+    height: 10vw;
+    max-height: 6vh;
+    cursor: pointer;
   }
   .mobile_nav_logo {
-      max-height: 6vh;
-      max-width: 30vh;
-      width: 50vw;
-      cursor: pointer;
+    max-height: 6vh;
+    max-width: 30vh;
+    width: 50vw;
+    cursor: pointer;
   }
   .mobile_nav_cart {
-      width: 10vw;
-      height: 10vw;
-      max-height: 6vh;
-      cursor: pointer;
+    width: 10vw;
+    height: 10vw;
+    max-height: 6vh;
+    cursor: pointer;
   }
 }
 
@@ -1109,7 +1215,6 @@ button.cart {
   align-items: stretch;
   text-align: center;
   pointer-events: auto;
-
 }
 
 .mobile_nav_items li {
@@ -1126,23 +1231,19 @@ button.cart {
   color: white;
 }
 
-
-
-@media screen and (max-width: 1000px) { 
-
+@media screen and (max-width: 1000px) {
   #cart_products {
     width: 100%;
     border-radius: 0;
   }
 }
 
-@media screen and (max-width: 500px) { 
+@media screen and (max-width: 500px) {
   #herbalife_store_logo img {
     width: 90vw;
     height: auto;
   }
 }
-
 
 #footer {
   float: left;
@@ -1159,9 +1260,9 @@ button.cart {
 #footer span {
   font-weight: 500;
 }
+
 @media screen and (max-width: 400px) {
   #footer {
-      height: 66px;
+    height: 66px;
   }
 }
-

@@ -112,3 +112,30 @@
 #slider_wrap ul, #pagination-wrap ul li {
 	transition: all 0.3s cubic-bezier(1, .01, .32, 1);
 }
+
+@media screen and (max-width: 1550px), screen and (max-height: 810px) {
+	:root{
+		--slideshowSize: 60vh;
+		--btnSize: 6vh;
+	}
+	
+	#next {
+		right: 5px;
+	}
+	
+	#previous {
+		left: 5px;
+	}
+
+	.btns img {
+		width: 4vh;
+	}
+	
+	#pagination_wrap ul li {
+		margin: 0 1vh;
+		width: 2vh;
+		height: 2vh;
+		border: 0.6vh solid #476080;
+		position: relative;
+	}	
+}
