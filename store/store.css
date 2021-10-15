@@ -1555,14 +1555,7 @@ button.cart {
     width: 9vh;
     height: 9vh;
   }
-  #o_add_to_cart_icon_container img {
-    width: 55px;
-    height: 55px;
-    position: absolute;
-    top: 52%;
-    left: 58%;
-    transform: translate(-50%, -50%);
-  }
+
   #o_add_to_cart_container span {
     left: 9vh;
     text-align: center;
