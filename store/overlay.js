@@ -25,7 +25,7 @@ var overlay = {
             slideshowImage.src = '/productImages/' + product.images[index];
             liImg.appendChild(slideshowImage);
         }
-
+        document.body.style.overflowY = "hidden";
         slideshow.buildSlider();
 
         //? Buttons functionality
@@ -47,6 +47,7 @@ var overlay = {
                     document.getElementById("co_products_flex").innerHTML = "";
 
                     slideshow.destroySlideshow();
+                    document.body.style.overflowY = "auto";
                 }
             });
         }
