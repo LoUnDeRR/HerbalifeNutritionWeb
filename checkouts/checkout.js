@@ -15,7 +15,7 @@ var checkout = {
         inputItems.value = itemsString;
 
         //
-        document.getElementById("checkout_total_price").textContent = checkout.total;
+        document.getElementById("checkout_total_price").textContent = checkout.total.toFixed(2);
         for (let index = 0; index < Object.keys(checkout.cartItems).length; index++) {
             let itemsList = document.getElementById("checkoutItems");
             let listElement = document.createElement('li');

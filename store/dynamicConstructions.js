@@ -179,7 +179,7 @@ function cartOverlayConstruction() {
         productPriceBox.className = "co_products_product_price_container";
         productContainer.appendChild(productPriceBox)
 
-        let productPrice = document.createElement('price');
+        let productPrice = document.createElement('span');
         productPrice.className = "co_products_product_price p" + index;
         productPrice.textContent = (cart.items[index] * eachProduct.price).toFixed(2) + " лв.";
         overlay.totalSum += cart.items[index] * eachProduct.price;

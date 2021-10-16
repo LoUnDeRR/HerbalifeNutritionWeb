@@ -7,7 +7,7 @@ var buyNow = {
         const name = params.get("name");
 
 
-        document.getElementById("checkout_product_price").textContent = price;
+        document.getElementById("checkout_product_price").textContent = price.toFixed(2);
 
         let buyNowItem = document.getElementById("buy_now_item");
         buyNowItem.value = `ID: #${id} | БРОЙ: 1 | ЦЕНА: ${price} | ИМЕ: ${name}\n`;

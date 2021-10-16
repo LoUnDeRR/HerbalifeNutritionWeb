@@ -100,6 +100,9 @@ var overlay = {
 
             overlay.cartIsEmpty();
         }
+        else {
+            overlay.removeP(index) // new - possible bugs
+        }
     },
 
     removeP: function (index) {
