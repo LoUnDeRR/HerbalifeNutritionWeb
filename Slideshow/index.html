@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML Components</title>
+  <meta name="description" content="Ready to use HTML and CSS components for your website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <script src="/slideshow.js"></script>
+</head>
+
+<body onresize="slideshow.resize()">
+  <div class="slider">
+    <ul class="slider__slides">
+      <li class="slider__first_slide">
+        <img src="slideshow_images/img1.jpg" alt="">
+        <div class="slider__first_slide__quote_container">
+          <blockquote class="slider__first_slide__quote">„АКО ЩЕ ПРАВИШ<br> НЕЩО, НАПРАВИ<br> ГО ДО КРАЙ.“</blockquote>
+          <span class="slider__first_slide__quote_author">– ДЖЕЙ КЪТЛЪР</span>
+        </div>
+      </li>
+      <li>
+        <img src="slideshow_images/img2.jpg" alt="">
+      </li>
+      <li>
+        <img src="slideshow_images/img3.jpg" alt="">
+      </li>
+    </ul>
+
+    <!-- controls -->
+    <div class="slider__btns slider__btns--previous">
+      <img src="/icons/leftArrow.svg" alt="">
+    </div>
+    <div class="slider__btns slider__btns--next">
+      <img src="/icons/rightArrow.svg" alt="">
+    </div>
+    <!-- !controls -->
+
+    <div class="slider__pagination_wrap">
+      <ul>
+      </ul>
+    </div>
+
+    <a href="404">
+      <div class="slider__store_btn">
+        <span>КЪМ МАГАЗИНА</span>
+      </div>
+    </a>
+  </div>
+  <!-- !slideshow -->
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$global_slider_btn: 6rem;
+$global_btn_margin: 2rem;
+$global_slider_width: 90vw;
+$global_slider_height: 90vh;
+$global_quote_container_height: 14rem;
+$global_store_btn_color: #7ecc4c;
+$global_store_btn_color_active: #77c447;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-language-override: "ENG";
+	text-decoration: none;
+	color: inherit;
+	scroll-behavior: smooth;
+}
+
+.slider {
+	margin: auto;
+	width: $global_slider_width;
+	height: $global_slider_height;
+	position: relative;
+	overflow: hidden;
+	user-select: none;
+
+	&__slides {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		list-style: none;
+		transition: all 0.3s cubic-bezier(1, 0.01, 0.32, 1);
+	}
+
+	&__slides li {
+		float: left;
+		position: relative;
+		width: $global_slider_width;
+		height: $global_slider_height;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__first_slide img {
+		object-position: center center;
+	}
+
+	&__first_slide {
+		&__quote_container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+			width: 100%;
+			height: $global_quote_container_height;
+			background-color: rgba(0, 0, 0, 0.56);
+		}
+
+		&__quote,
+		&__quote_author {
+			font-weight: 800;
+			font-style: italic;
+			color: #dddddd;
+		}
+
+		&__quote {
+			position: absolute;
+			margin-right: 50px;
+			margin-bottom: 40px;
+			font-size: 35px;
+		}
+
+		&__quote_author {
+			position: absolute;
+			font-size: 27px;
+			margin-top: 150px;
+			margin-left: 150px;
+		}
+	}
+
+	&__btns {
+		position: absolute;
+		width: $global_slider_btn;
+		height: $global_slider_btn;
+		cursor: pointer;
+		background: rgba(0, 0, 0, 0.5);
+		top: 50%;
+		transform: translate(0, -50%);
+		border-radius: 50%;
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.85);
+		}
+
+		&--previous {
+			left: $global_btn_margin;
+			img {
+				position: absolute;
+				left: 45%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		&--next {
+			right: $global_btn_margin;
+			img {
+				position: absolute;
+				left: 55%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+
+	&__pagination_wrap {
+		min-width: 20px;
+		height: 15px;
+		position: absolute;
+		bottom: 20px;
+	}
+
+	&__pagination_wrap ul {
+		width: $global_slider_width;
+		display: table;
+		text-align: center;
+
+		li {
+			vertical-align: middle;
+			margin: 0 20px;
+			display: inline-block;
+			width: 75px;
+			height: 6px;
+			background-color: #cdcdcd;
+			position: relative;
+		}
+
+		.slider__pagination_wrap--active {
+			background-color: #0075ff;
+		}
+	}
+
+	&__store_btn {
+		position: absolute;
+		right: 4vw;
+		bottom: 7vh;
+		width: 280px;
+		height: 65px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $global_store_btn_color; 
+		border-radius: 7px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		cursor: pointer;
+
+		span {
+			color: #ffffff;
+			font-size: 22px;
+			font-weight: 800;
+			font-style: italic;
+		}
+		&:hover {
+			background-color: $global_store_btn_color_active; 
+		}
+	}
+}
+
+@media (max-width: 1007px) {
+	$global_slider_btn: 4rem;
+	$global_btn_margin: 1rem;
+	$global_quote_container_height: 10rem;
+
+	.slider {
+		&__btns {
+			width: $global_slider_btn;
+			height: $global_slider_btn;
+
+			&--previous {
+				left: $global_btn_margin;
+			}
+
+			&--next {
+				right: $global_btn_margin;
+			}
+		}
+		&__first_slide {
+			&__quote_container {
+				height: $global_quote_container_height;
+			}
+
+			&__quote {
+				font-size: 25px;
+			}
+
+			&__quote_author {
+				font-size: 21px;
+				margin-top: 105px;
+			}
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	.slider {
+		&__first_slide {
+			&__quote_container {
+				position: absolute;
+				top: 30%;
+			}
+		}
+
+		&__store_btn {
+			left: 50%;
+			transform: translate(-50%, 0);
+			max-width: 400px;
+			width: 90%;
+		}
+	}
+}

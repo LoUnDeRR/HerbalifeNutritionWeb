@@ -1,0 +1,3 @@
+slideshow
+store/gallery system
+alert system

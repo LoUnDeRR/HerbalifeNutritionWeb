@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML Components</title>
+    <meta name="description" content="Ready to use HTML and CSS components for your website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav_container">
+            <div id="logo">
+                <a href="#"><img src="logo.png" alt="Company Name Logo"></a>
+
+            </div>
+            <nav class="navigation">
+                <ul class="navigation_list">
+                    <li class="nav_item nav_active" id="nav_home"><a href="#">Начало</a></li>
+                    <li class="nav_item" id="nav_store"><a href="#">Магазин</a></li>
+                    <li class="nav_item" id="nav_services"><a href="#">Услуги</a></li>
+                    <li class="nav_item" id="nav_about_us"><a href="#">За нас</a></li>
+                    <li class="nav_item" id="nav_contact"><a href="#">Контакти</a></li>
+                </ul>
+            </nav>
+            <div class="menu_btn">
+                <div class="menu_line1"></div>
+                <div class="menu_line2"></div>
+                <div class="menu_line3"></div>
+            </div>
+        </div>
+        <script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+
+                // Menu button
+                const mobileBtn = document.querySelector(".menu_btn");
+                const nav = document.querySelector(".navigation");
+                mobileBtn.addEventListener("click", () => {
+                    nav.classList.toggle("menu_active");
+                    mobileBtn.classList.toggle("btn_active");
+                });
+
+                // Active page
+                const nav_items = document.getElementsByClassName("nav_item");
+                for (const item of nav_items) {
+                    item.firstChild.addEventListener('click', (e) => {
+                        for (const item of nav_items) {
+                            item.classList.remove("nav_active");
+                        }
+                        item.classList.add("nav_active");
+                    });
+                }
+                
+            });
+        </script>
+    </header>
+</body>
+
+</html>
